@@ -1,0 +1,38 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "minecraft:item/acacia_door"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "damage": 0.1
+      },
+      "model": "create_fanta:item/pulp_filter_0"
+    },
+    {
+      "predicate": {
+        "damage": 0.4
+      },
+      "model": "create_fanta:item/pulp_filter_1"
+    },
+    {
+      "predicate": {
+        "damage": 0.6
+      },
+      "model": "create_fanta:item/pulp_filter_2"
+    },
+    {
+      "predicate": {
+        "damage": 0.9
+      },
+      "model": "create_fanta:item/pulp_filter_3"
+    },
+    {
+      "predicate": {
+        "damage": 1
+      },
+      "model": "create_fanta:item/pulp_filter_4"
+    }
+  ]
+}

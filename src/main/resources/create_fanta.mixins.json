@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.xenrao.cf.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "FluidPipeBlockMixin"
+  ],
+  "client": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -1,5 +1,10 @@
 {
   "variants": {
-    "": { "model": "create_fanta:block/filter" }
+    "facing=up":    { "model": "create_fanta:block/filter" },
+    "facing=down":  { "model": "create_fanta:block/filter", "x": 180 },
+    "facing=north": { "model": "create_fanta:block/filter", "x": 90, "y": 180 },
+    "facing=south": { "model": "create_fanta:block/filter", "x": 90 },
+    "facing=east":  { "model": "create_fanta:block/filter", "x": 90, "y": 90 },
+    "facing=west":  { "model": "create_fanta:block/filter", "x": 90, "y": 270 }
   }
 }

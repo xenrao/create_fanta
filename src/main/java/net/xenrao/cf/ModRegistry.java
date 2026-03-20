@@ -22,9 +22,9 @@ public class ModRegistry {
         DeferredRegister.create(ForgeRegistries.ITEMS, CreateFantaMod.MODID);
 
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES =
-        DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES,
-            CreateFantaMod.MODID);
+        DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, CreateFantaMod.MODID);
 
+    // Blok → create_fanta:filter
     public static final RegistryObject<FilterBlock> FILTER_BLOCK =
         BLOCKS.register("filter",
             () -> new FilterBlock(BlockBehaviour.Properties.of()
@@ -33,12 +33,14 @@ public class ModRegistry {
                 .sound(SoundType.METAL)
                 .noOcclusion()));
 
-    public static final RegistryObject<BlockItem> FILTER_ITEM =
+    // Blok item → create_fanta:filter
+    public static final RegistryObject<BlockItem> FILTER_BLOCK_ITEM =
         ITEMS.register("filter",
             () -> new BlockItem(FILTER_BLOCK.get(), new Item.Properties()));
 
-    public static final RegistryObject<BlockEntityType<FilterBlockEntity>>
-        FILTER_BE = BLOCK_ENTITIES.register("filter",
+    // Block entity → create_fanta:filter
+    public static final RegistryObject<BlockEntityType<FilterBlockEntity>> FILTER_BE =
+        BLOCK_ENTITIES.register("filter",
             () -> BlockEntityType.Builder
                 .of(FilterBlockEntity::new, FILTER_BLOCK.get())
                 .build(null));

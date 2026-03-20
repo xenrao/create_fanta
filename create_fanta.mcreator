@@ -118,6 +118,42 @@
           "src/main/resources/assets/create_fanta/models/item/pulp_filter.json"
         ]
       }
+    },
+    {
+      "name": "FilterRenderer",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "filter_renderer",
+      "metadata": {
+        "files": [
+          "src/main/java/net/xenrao/cf/FilterRenderer.java"
+        ]
+      }
+    },
+    {
+      "name": "FilterClientEvents",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "filter_client_events",
+      "metadata": {
+        "files": [
+          "src/main/java/net/xenrao/cf/FilterClientEvents.java"
+        ]
+      }
+    },
+    {
+      "name": "FluidPipeBlockMixin",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "fluid_pipe_block_mixin",
+      "metadata": {
+        "files": [
+          "src/main/java/net/xenrao/cf/FluidPipeBlockMixin.java"
+        ]
+      }
     }
   ],
   "variable_elements": [],

@@ -11,14 +11,16 @@ credits="Created using mod maker MCreator - https://mcreator.net/about"
 authors="MCreator"
 
 # Start of user code block mod configuration
+[[mixins]]
+config="create_fanta.mixins.json"
 # End of user code block mod configuration
 
 [[dependencies.create_fanta]]
-    modId="minecraft"
-    mandatory=true
-    versionRange="[1.20.1]"
-    ordering="AFTER"
-    side="BOTH"
+modId="minecraft"
+mandatory=true
+versionRange="[1.20.1]"
+ordering="AFTER"
+side="BOTH"
 
 
 

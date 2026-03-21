@@ -1,7 +1,12 @@
 {
-  "parent": "item/generated",
+  "parent": "create_fanta:custom/pulpfilter",
   "textures": {
-    "layer0": "minecraft:item/acacia_door"
+    "0": "create:block/brass_casing",
+    "1": "minecraft:block/white_wool",
+    "2": "minecraft:block/coal_block",
+    "3": "minecraft:block/iron_bars",
+    "missing": "create_fanta:block/",
+    "particle": "minecraft:item/acacia_door"
   },
   "overrides": [
     {

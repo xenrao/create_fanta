@@ -26,7 +26,7 @@ public class ModRegistry {
 
     // Blok → create_fanta:filter
     public static final RegistryObject<FilterBlock> FILTER_BLOCK =
-        BLOCKS.register("filter",
+        BLOCKS.register("filter_block",
             () -> new FilterBlock(BlockBehaviour.Properties.of()
                 .mapColor(MapColor.METAL)
                 .strength(3.0f)
@@ -35,13 +35,13 @@ public class ModRegistry {
 
     // Blok item → create_fanta:filter
     public static final RegistryObject<BlockItem> FILTER_BLOCK_ITEM =
-        ITEMS.register("filter",
+        ITEMS.register("filter_block",
             () -> new BlockItem(FILTER_BLOCK.get(), new Item.Properties()));
 
     // Block entity → create_fanta:filter
-    public static final RegistryObject<BlockEntityType<FilterBlockEntity>> FILTER_BE =
-        BLOCK_ENTITIES.register("filter",
-            () -> BlockEntityType.Builder
-                .of(FilterBlockEntity::new, FILTER_BLOCK.get())
-                .build(null));
+	public static final RegistryObject<BlockEntityType<FilterBlockEntity>> FILTER_BE =
+	    BLOCK_ENTITIES.register("filter_block",
+	        () -> BlockEntityType.Builder
+	            .of(FilterBlockEntity::new, FILTER_BLOCK.get()) // 🔹 Bu safe
+	            .build(null));
 }

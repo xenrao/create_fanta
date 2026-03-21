@@ -131,7 +131,7 @@ public class FilterBlockEntity extends KineticBlockEntity implements IHaveGoggle
         ItemStack held = player.getItemInHand(hand);
         ItemStack current = filterSlot.getStackInSlot(0);
 
-        if (!current.isEmpty()) {
+        if (!current.isEmpty() && held.isEmpty()) {
             if (!player.getInventory().add(current.copy())) {
                 Containers.dropItemStack(level,
                     worldPosition.getX() + 0.5,
@@ -140,6 +140,7 @@ public class FilterBlockEntity extends KineticBlockEntity implements IHaveGoggle
                     current.copy());
             }
             filterSlot.setStackInSlot(0, ItemStack.EMPTY);
+            updateFilterState(false);
             notifyUpdate();
             return InteractionResult.SUCCESS;
         }
@@ -149,12 +150,21 @@ public class FilterBlockEntity extends KineticBlockEntity implements IHaveGoggle
             toInsert.setCount(1);
             filterSlot.setStackInSlot(0, toInsert);
             held.shrink(1);
+            updateFilterState(true);
             notifyUpdate();
             return InteractionResult.SUCCESS;
         }
 
         return InteractionResult.PASS;
     }
+    
+	private void updateFilterState(boolean hasFilter) {
+	    if (level == null) return;
+		    BlockState state = getBlockState();
+		    if (state.getValue(FilterBlock.HAS_FILTER) != hasFilter) {
+		        level.setBlockAndUpdate(worldPosition, state.setValue(FilterBlock.HAS_FILTER, hasFilter));
+		    }
+	}
 
     // ===== COMPARATOR =====
     public int getComparatorOutput() {
@@ -272,14 +282,18 @@ public class FilterBlockEntity extends KineticBlockEntity implements IHaveGoggle
         tag.put("Filter", filterSlot.serializeNBT());
     }
 
-    @Override
-    protected void read(CompoundTag tag, boolean client) {
-        super.read(tag, client);
-        inTank.readFromNBT(tag.getCompound("In"));
-        outTank.readFromNBT(tag.getCompound("Out"));
-        timer = tag.getInt("T");
-        filterSlot.deserializeNBT(tag.getCompound("Filter"));
-    }
+	@Override
+	protected void read(CompoundTag tag, boolean client) {
+	    super.read(tag, client);
+	    inTank.readFromNBT(tag.getCompound("In"));
+	    outTank.readFromNBT(tag.getCompound("Out"));
+	    timer = tag.getInt("T");
+	    filterSlot.deserializeNBT(tag.getCompound("Filter"));
+	
+	    if (level != null && !level.isClientSide) {
+	        updateFilterState(!filterSlot.getStackInSlot(0).isEmpty());
+	    }
+	}
 
     // ===== GOGGLES =====
 	@Override
@@ -350,11 +364,6 @@ public class FilterBlockEntity extends KineticBlockEntity implements IHaveGoggle
             return dir == getInputSide() || dir == getOutputSide();
         }
 
-        @Override
-		public AttachmentTypes getRenderedRimAttachment(BlockAndTintGetter world, BlockPos pos, BlockState state,
-														Direction direction) {
-															return AttachmentTypes.NONE;
-														}
     }
 
     // ===== FLUID HANDLERS =====

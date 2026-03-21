@@ -2,9 +2,9 @@
   "_fv": 79,
   "_type": "item",
   "definition": {
-    "renderType": 0,
+    "renderType": 1,
     "texture": "minecraft:acacia_door",
-    "customModelName": "Normal",
+    "customModelName": "pulpfilter:default",
     "guiTexture": "",
     "customProperties": {},
     "states": [

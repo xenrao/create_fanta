@@ -144,14 +144,26 @@
       }
     },
     {
-      "name": "FluidPipeBlockMixin",
+      "name": "FluidTransportBehaviourMixin",
       "type": "code",
       "compiles": true,
       "locked_code": true,
-      "registry_name": "fluid_pipe_block_mixin",
+      "registry_name": "fluid_transport_behaviour_mixin",
       "metadata": {
         "files": [
-          "src/main/java/net/xenrao/cf/FluidPipeBlockMixin.java"
+          "src/main/java/net/xenrao/cf/FluidTransportBehaviourMixin.java"
+        ]
+      }
+    },
+    {
+      "name": "FilterPartialModels",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "filter_partial_models",
+      "metadata": {
+        "files": [
+          "src/main/java/net/xenrao/cf/FilterPartialModels.java"
         ]
       }
     }

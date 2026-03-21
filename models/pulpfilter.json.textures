@@ -1,0 +1,14 @@
+{
+  "mappings": {
+    "default": {
+      "name": "default",
+      "map": {
+        "0": "create:brass_casing",
+        "1": "minecraft:white_wool",
+        "2": "minecraft:coal_block",
+        "3": "minecraft:iron_bars",
+        "missing": ""
+      }
+    }
+  }
+}

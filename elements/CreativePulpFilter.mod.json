@@ -2,23 +2,23 @@
   "_fv": 79,
   "_type": "item",
   "definition": {
-    "renderType": 0,
-    "texture": "orange",
-    "customModelName": "Normal",
+    "renderType": 1,
+    "texture": "minecraft:light_15",
+    "customModelName": "pulpfilter:creative",
     "guiTexture": "",
     "customProperties": {},
     "states": [],
     "animations": [],
-    "name": "Orange",
+    "name": "Creative Pulp Filter",
     "rarity": "COMMON",
     "creativeTabs": [
       {
         "value": "CUSTOM:Createfanta"
       }
     ],
-    "stackSize": 64,
+    "stackSize": 1,
     "enchantability": 0,
-    "useDuration": 32,
+    "useDuration": 0,
     "toolType": 1.0,
     "damageCount": 0,
     "recipeRemainder": {
@@ -46,15 +46,15 @@
       "value": "Arrow"
     },
     "projectileDisableAmmoCheck": false,
-    "isFood": true,
-    "nutritionalValue": 3,
+    "isFood": false,
+    "nutritionalValue": 4,
     "saturation": 0.3,
     "eatResultItem": {
       "value": ""
     },
     "isMeat": false,
     "isAlwaysEdible": false,
-    "animation": "drink",
+    "animation": "none",
     "isMusicDisc": false,
     "musicDiscMusic": {
       "value": ""

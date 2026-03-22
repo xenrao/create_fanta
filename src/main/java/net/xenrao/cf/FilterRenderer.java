@@ -43,15 +43,15 @@ public class FilterRenderer extends KineticBlockEntityRenderer<FilterBlockEntity
 	    switch (facing) {
 	        case UP -> {}
 	        case DOWN -> ms.mulPose(Axis.XP.rotationDegrees(180));
-	        case NORTH -> ms.mulPose(Axis.XP.rotationDegrees(90));
-	        case SOUTH -> ms.mulPose(Axis.XP.rotationDegrees(-90));
+	        case NORTH -> ms.mulPose(Axis.XP.rotationDegrees(-90));
+	        case SOUTH -> ms.mulPose(Axis.XP.rotationDegrees(90));
 	        case EAST -> ms.mulPose(Axis.ZP.rotationDegrees(-90));
 	        case WEST -> ms.mulPose(Axis.ZP.rotationDegrees(90));
 	    }
 	
 	    ms.mulPose(Axis.YP.rotationDegrees(angleDeg));
 	
-	    ms.translate(-0.5, -0.45, -0.5);
+	    ms.translate(-0.5, -0.5, -0.5);
 	
 	    cog.light(light)
 	       .renderInto(ms, buffer.getBuffer(RenderType.solid()));

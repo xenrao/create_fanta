@@ -39,7 +39,7 @@
       "name": "UnfilteredOrangeJuice",
       "type": "fluid",
       "compiles": true,
-      "locked_code": true,
+      "locked_code": false,
       "registry_name": "unfiltered_orange_juice",
       "metadata": {
         "files": [
@@ -110,11 +110,6 @@
       "metadata": {
         "files": [
           "src/main/java/net/xenrao/cf/item/PulpFilterItem.java",
-          "src/main/resources/assets/create_fanta/models/item/pulp_filter_0.json",
-          "src/main/resources/assets/create_fanta/models/item/pulp_filter_3.json",
-          "src/main/resources/assets/create_fanta/models/item/pulp_filter_1.json",
-          "src/main/resources/assets/create_fanta/models/item/pulp_filter_2.json",
-          "src/main/resources/assets/create_fanta/models/item/pulp_filter_4.json",
           "src/main/resources/assets/create_fanta/models/item/pulp_filter.json"
         ]
       }
@@ -166,11 +161,51 @@
           "src/main/java/net/xenrao/cf/FilterPartialModels.java"
         ]
       }
+    },
+    {
+      "name": "CreativePulpFilter",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "creative_pulp_filter",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/create_fanta/models/item/creative_pulp_filter.json",
+          "src/main/java/net/xenrao/cf/item/CreativePulpFilterItem.java"
+        ]
+      }
+    },
+    {
+      "name": "Testf",
+      "type": "fluid",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "testf",
+      "metadata": {
+        "files": [
+          "src/main/java/net/xenrao/cf/block/TestfBlock.java",
+          "src/main/resources/assets/create_fanta/blockstates/testf.json",
+          "src/main/resources/assets/create_fanta/models/item/testf_bucket.json",
+          "src/main/java/net/xenrao/cf/item/TestfItem.java",
+          "src/main/resources/assets/create_fanta/models/block/testf.json",
+          "src/main/java/net/xenrao/cf/fluid/TestfFluid.java",
+          "src/main/java/net/xenrao/cf/fluid/types/TestfFluidType.java"
+        ]
+      }
     }
   ],
   "variable_elements": [],
   "sound_elements": [],
-  "tag_elements": {},
+  "tag_elements": {
+    "ITEMS:mod:pulp_filters": [
+      "CUSTOM:PulpFilter",
+      "CUSTOM:CreativePulpFilter"
+    ],
+    "BLOCKS:minecraft:replaceable": [
+      "~CUSTOM:Testf",
+      "~CUSTOM:UnfilteredOrangeJuice"
+    ]
+  },
   "tab_element_order": {},
   "language_map": {
     "en_us": {
@@ -180,7 +215,13 @@
       "block.create_fanta.unfiltered_orange_juice": "Unfiltered Orange Juice",
       "fluid.create_fanta.unfiltered_orange_juice": "Unfiltered Orange Juice",
       "item.create_fanta.half_orange": "Half Orange",
-      "item.create_fanta.pulp_filter": "Filter"
+      "item.create_fanta.pulp_filter": "Pulp Filter",
+      "block.create_fanta.filter_block": "Filter",
+      "item.create_fanta.creative_pulp_filter": "Creative Pulp Filter",
+      "block.create_fanta.testf": "Testf",
+      "fluid_type.create_fanta.testf": "Testf",
+      "fluid.create_fanta.testf": "Testf",
+      "item.create_fanta.testf_bucket": "Testf Bucket"
     }
   },
   "metadata": {

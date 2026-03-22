@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "create_fanta:pulp_filter",
+    "create_fanta:creative_pulp_filter"
+  ]
+}

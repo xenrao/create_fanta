@@ -1,11 +1,11 @@
 {
   "parent": "create_fanta:custom/pulpfilter",
   "textures": {
-    "0": "create:block/brass_casing",
+    "0": "create:block/crate_creative",
     "1": "minecraft:block/white_wool",
     "2": "minecraft:block/coal_block",
     "3": "minecraft:block/iron_bars",
     "missing": "create_fanta:block/",
-    "particle": "minecraft:item/light_00"
+    "particle": "minecraft:item/light_15"
   }
 }

@@ -1,5 +1,5 @@
 {
   "textures": {
-    "particle": "minecraft:block/barrel_bottom"
+    "particle": "create_fanta:block/unfiltered_orange_juice_still"
   }
 }

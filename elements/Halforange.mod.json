@@ -3,7 +3,7 @@
   "_type": "item",
   "definition": {
     "renderType": 0,
-    "texture": "minecraft:barrier",
+    "texture": "sliced_orange",
     "customModelName": "Normal",
     "guiTexture": "",
     "customProperties": {},

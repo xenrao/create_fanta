@@ -3,94 +3,13 @@
   "_type": "item",
   "definition": {
     "renderType": 1,
-    "texture": "minecraft:acacia_door",
+    "texture": "minecraft:light_00",
     "customModelName": "pulpfilter:default",
     "guiTexture": "",
     "customProperties": {},
-    "states": [
-      {
-        "renderType": 0,
-        "texture": "minecraft:bamboo_door",
-        "customModelName": "Normal",
-        "stateMap": [
-          {
-            "property": {
-              "min": 0.0,
-              "max": 1.0,
-              "name": "damage",
-              "type": "number"
-            },
-            "value": 0.1
-          }
-        ]
-      },
-      {
-        "renderType": 0,
-        "texture": "minecraft:birch_door",
-        "customModelName": "Normal",
-        "stateMap": [
-          {
-            "property": {
-              "min": 0.0,
-              "max": 1.0,
-              "name": "damage",
-              "type": "number"
-            },
-            "value": 0.4
-          }
-        ]
-      },
-      {
-        "renderType": 0,
-        "texture": "minecraft:cherry_door",
-        "customModelName": "Normal",
-        "stateMap": [
-          {
-            "property": {
-              "min": 0.0,
-              "max": 1.0,
-              "name": "damage",
-              "type": "number"
-            },
-            "value": 0.6
-          }
-        ]
-      },
-      {
-        "renderType": 0,
-        "texture": "minecraft:crimson_door",
-        "customModelName": "Normal",
-        "stateMap": [
-          {
-            "property": {
-              "min": 0.0,
-              "max": 1.0,
-              "name": "damage",
-              "type": "number"
-            },
-            "value": 0.9
-          }
-        ]
-      },
-      {
-        "renderType": 0,
-        "texture": "minecraft:dark_oak_door",
-        "customModelName": "Normal",
-        "stateMap": [
-          {
-            "property": {
-              "min": 0.0,
-              "max": 1.0,
-              "name": "damage",
-              "type": "number"
-            },
-            "value": 1.0
-          }
-        ]
-      }
-    ],
+    "states": [],
     "animations": [],
-    "name": "Filter",
+    "name": "Pulp Filter",
     "rarity": "COMMON",
     "creativeTabs": [
       {
@@ -101,7 +20,7 @@
     "enchantability": 0,
     "useDuration": 0,
     "toolType": 1.0,
-    "damageCount": 10000,
+    "damageCount": 1000,
     "recipeRemainder": {
       "value": ""
     },

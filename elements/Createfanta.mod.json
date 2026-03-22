@@ -4,7 +4,7 @@
   "definition": {
     "name": "Create Fanta",
     "icon": {
-      "value": "Blocks.BARRIER"
+      "value": "CUSTOM:Orange"
     },
     "showSearch": false
   }

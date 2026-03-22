@@ -30,16 +30,17 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import net.xenrao.cf.ModRegistry;
 import net.xenrao.cf.item.PulpFilterItem;
+import net.xenrao.cf.item.CreativePulpFilterItem;
 
 import java.util.List;
 import net.minecraft.world.level.BlockAndTintGetter;
 
 public class FilterBlockEntity extends KineticBlockEntity implements IHaveGoggleInformation {
 
-    private static final int BUFFER = 10;
-    private static final int BATCH = 5;
-    private static final int LOSS = 2;
-    private static final int BASE_TIME = 200;
+    private static final int BUFFER = 100;
+    private static final int BATCH = 50;
+    private static final int LOSS = 20;
+    private static final int BASE_TIME = 500;
 
  private int timer = BASE_TIME;
     private final SmartFluidTank inTank;
@@ -145,11 +146,11 @@ public class FilterBlockEntity extends KineticBlockEntity implements IHaveGoggle
             return InteractionResult.SUCCESS;
         }
 
-        if (!held.isEmpty() && held.getItem() instanceof PulpFilterItem) {
+        if (!held.isEmpty() && current.isEmpty() && (held.getItem() instanceof PulpFilterItem || held.getItem() instanceof CreativePulpFilterItem)) {
             ItemStack toInsert = held.copy();
             toInsert.setCount(1);
             filterSlot.setStackInSlot(0, toInsert);
-            held.shrink(1);
+            if (!player.getAbilities().instabuild) held.shrink(1);
             updateFilterState(true);
             notifyUpdate();
             return InteractionResult.SUCCESS;
@@ -169,6 +170,7 @@ public class FilterBlockEntity extends KineticBlockEntity implements IHaveGoggle
     // ===== COMPARATOR =====
     public int getComparatorOutput() {
         ItemStack filter = filterSlot.getStackInSlot(0);
+        if (filter.getItem() instanceof CreativePulpFilterItem) return 15;
         if (filter.isEmpty())
             return 0;
 
@@ -188,6 +190,7 @@ public class FilterBlockEntity extends KineticBlockEntity implements IHaveGoggle
     // ===== FİLTRE =====
     public boolean hasFilter() {
         ItemStack filter = filterSlot.getStackInSlot(0);
+        if (filter.getItem() instanceof CreativePulpFilterItem) return true;
         if (filter.isEmpty())
             return false;
         if (filter.getMaxDamage() > 0 && filter.getDamageValue() >= filter.getMaxDamage())
@@ -256,7 +259,8 @@ public class FilterBlockEntity extends KineticBlockEntity implements IHaveGoggle
     }
 
     private void damageFilter() {
-        ItemStack filter = filterSlot.getStackInSlot(0);
+		ItemStack filter = filterSlot.getStackInSlot(0);
+    	if (filter.getItem() instanceof CreativePulpFilterItem) return;
         if (filter.isEmpty())
             return;
         if (filter.getMaxDamage() <= 0)
@@ -302,8 +306,18 @@ public class FilterBlockEntity extends KineticBlockEntity implements IHaveGoggle
 	
 	    tooltip.add(Component.empty());
 		tooltip.add(Component.literal("    Filter Stats:"));
+		ItemStack filter = filterSlot.getStackInSlot(0);
 		
-	    ItemStack filter = filterSlot.getStackInSlot(0);
+		if (filter.getItem() instanceof CreativePulpFilterItem) {
+			StringBuilder bar = new StringBuilder();
+			bar.append("\u00a7a");
+		    for (int i = 0; i < 50; i++) {
+		        bar.append("|");
+		    }
+			tooltip.add(Component.literal("    " + bar + " \u00a7f" + "100%"));
+			return true;
+		}
+	    
 	    if (filter.isEmpty()) {
 	        tooltip.add(Component.literal("    \u00a7c\u00a7lNo Filter!"));
 	        return true;

@@ -9,6 +9,16 @@
         "3": "minecraft:iron_bars",
         "missing": ""
       }
+    },
+    "creative": {
+      "name": "creative",
+      "map": {
+        "0": "create:crate_creative",
+        "1": "minecraft:white_wool",
+        "2": "minecraft:coal_block",
+        "3": "minecraft:iron_bars",
+        "missing": ""
+      }
     }
   }
 }

@@ -9,7 +9,6 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
@@ -18,19 +17,17 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
-import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.level.BlockGetter;
 import net.xenrao.cf.ModRegistry;
 
 public class FilterBlock extends KineticBlock implements IBE<FilterBlockEntity>, ICogWheel {
 
     public static final DirectionProperty FACING = BlockStateProperties.FACING;
-    // 0=North(0°), 1=East(90°), 2=South(180°), 3=West(270°)
-    public static final IntegerProperty ROTATION = IntegerProperty.create("rotation", 0, 3);
     public static final BooleanProperty HAS_FILTER = BooleanProperty.create("has_filter");
 
     private static final VoxelShape SHAPE_Y = Block.box(2, 0, 2, 14, 16, 14);
@@ -41,38 +38,37 @@ public class FilterBlock extends KineticBlock implements IBE<FilterBlockEntity>,
         super(p);
         registerDefaultState(defaultBlockState()
             .setValue(FACING, Direction.UP)
-            .setValue(ROTATION, 0)
             .setValue(HAS_FILTER, false));
     }
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(FACING, ROTATION, HAS_FILTER);
+        builder.add(FACING, HAS_FILTER);
         super.createBlockStateDefinition(builder);
     }
 
+    // ── Create tarzı yerleştirme ─────────────────────────────
+    //   Normal:   Baktığın yöne doğru yerleşir (bakış yönü)
+    //   Shift:    Tam tersi yöne yerleşir (bakışın tersine)
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
-        Direction facing = context.getNearestLookingDirection().getOpposite();
-        Direction horizontal = context.getHorizontalDirection().getOpposite();
+        Direction looking = context.getNearestLookingDirection();
 
-        // Oyuncunun yatay bakış yönünü 0-3 rotation'a çevir
-        int rotation = switch (horizontal) {
-            case NORTH -> 0;
-            case EAST  -> 1;
-            case SOUTH -> 2;
-            case WEST  -> 3;
-            default    -> 0;
-        };
+        Direction facing;
+        if (context.getPlayer() != null && context.getPlayer().isShiftKeyDown()) {
+            // Shift basılı → bakışın tersi (mevcut davranış)
+            facing = looking.getOpposite();
+        } else {
+            // Normal → bakış yönüyle aynı
+            facing = looking;
+        }
 
-        return defaultBlockState()
-            .setValue(FACING, facing)
-            .setValue(ROTATION, rotation);
+        return defaultBlockState().setValue(FACING, facing);
     }
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter level,
-                                BlockPos pos, CollisionContext ctx) {
+                                BlockPos pos, CollisionContext context) {
         return switch (state.getValue(FACING).getAxis()) {
             case Y -> SHAPE_Y;
             case Z -> SHAPE_Z;

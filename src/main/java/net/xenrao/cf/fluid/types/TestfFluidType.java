@@ -19,8 +19,8 @@ import java.util.function.Consumer;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.shaders.FogShape;
 
-public class UnfilteredOrangeJuiceFluidType extends FluidType {
-	public UnfilteredOrangeJuiceFluidType() {
+public class TestfFluidType extends FluidType {
+	public TestfFluidType() {
 		super(FluidType.Properties.create().fallDistanceModifier(0F).canExtinguish(true).supportsBoating(true).canHydrate(true).motionScale(0.007D).sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL)
 				.sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_EMPTY).sound(SoundActions.FLUID_VAPORIZE, SoundEvents.FIRE_EXTINGUISH));
 	}
@@ -28,8 +28,8 @@ public class UnfilteredOrangeJuiceFluidType extends FluidType {
 	@Override
 	public void initializeClient(Consumer<IClientFluidTypeExtensions> consumer) {
 		consumer.accept(new IClientFluidTypeExtensions() {
-			private static final ResourceLocation STILL_TEXTURE = new ResourceLocation("create_fanta:block/unfiltered_orange_juice_still");
-			private static final ResourceLocation FLOWING_TEXTURE = new ResourceLocation("create_fanta:block/unfiltered_orange_juice_flow");
+			private static final ResourceLocation STILL_TEXTURE = new ResourceLocation("minecraft:block/water_still");
+			private static final ResourceLocation FLOWING_TEXTURE = new ResourceLocation("minecraft:block/water_flow");
 
 			@Override
 			public ResourceLocation getStillTexture() {
@@ -45,6 +45,11 @@ public class UnfilteredOrangeJuiceFluidType extends FluidType {
 			public Vector3f modifyFogColor(Camera camera, float partialTick, ClientLevel level, int renderDistance, float darkenWorldAmount, Vector3f fluidFogColor) {
 				return new Vector3f(1f, 0.4f, 0f);
 			}
+			@Override
+            public int getTintColor() {
+                // AARRGGBB formatında portakal suyu rengi
+                return 0xFFDA882D;
+            }
 
 			@Override
 			public void modifyFogRender(Camera camera, FogRenderer.FogMode mode, float renderDistance, float partialTick, float nearDistance, float farDistance, FogShape shape) {
@@ -52,7 +57,7 @@ public class UnfilteredOrangeJuiceFluidType extends FluidType {
 				Level world = entity.level();
 				RenderSystem.setShaderFogShape(FogShape.SPHERE);
 				RenderSystem.setShaderFogStart(0f);
-				RenderSystem.setShaderFogEnd(3f);
+				RenderSystem.setShaderFogEnd(8f);
 			}
 		});
 	}

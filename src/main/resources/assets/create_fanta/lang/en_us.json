@@ -15,5 +15,21 @@
   "item.create_fanta.orange_juice_bucket": "Orange Juice Bucket",
   "item.create_fanta.plastic_bottle": "Plastic Bottle",
   "item.create_fanta.used_plastic_bottle": "Used Plastic Bottle",
-  "item.create_fanta.fanta": "Fanta"
+  "item.create_fanta.fanta": "Fanta",
+  "fluid.create_fanta.sweetened_orange_juice": "Sweetened Orange Juice",
+  "block.create_fanta.sweetened_orange_juice": "Sweetened Orange Juice",
+  "fluid_type.create_fanta.sweetened_orange_juice": "Sweetened Orange Juice",
+  "item.create_fanta.sweetened_orange_juice_bucket": "Sweetened Orange Juice Bucket",
+  "item.create_fanta.sweetened_orange_juice_bottle": "Sweetened Orange Juice",
+  "item.create_fanta.co_2_bucket": "Sweetened Orange Juice Bucket",
+  "fluid_type.create_fanta.co_2": "CO₂",
+  "fluid.create_fanta.co_2": "CO₂",
+  "block.create_fanta.co_2": "CO₂",
+  "fluid_type.create_fanta.petrol": "Petrol",
+  "block.create_fanta.petrol": "Petrol",
+  "item.create_fanta.petrol_bucket": "Petrol Bucket",
+  "fluid.create_fanta.petrol": "Petrol",
+  "item.create_fanta.raw_plastic_resin": "Raw Plastic Resin",
+  "block.create_fanta.orange_tree_sapling": "Orange Tree Sapling",
+  "block.create_fanta.orangetreeleaves": "Orange Tree Leaves"
 }

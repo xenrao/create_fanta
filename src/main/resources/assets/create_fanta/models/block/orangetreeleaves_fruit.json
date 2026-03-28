@@ -1,0 +1,7 @@
+{
+  "parent": "block/leaves",
+  "textures": {
+    "all": "create_fanta:block/orange_tree_leaves_2",
+    "particle": "create_fanta:block/orange_tree_leaves_2"
+  }
+}

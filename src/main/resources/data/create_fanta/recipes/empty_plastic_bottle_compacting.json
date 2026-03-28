@@ -1,0 +1,58 @@
+{
+  "type": "create:compacting",
+  "ingredients": [
+    {
+      "item": "create_fanta:raw_plastic_resin"
+    },
+    {
+      "item": "create_fanta:raw_plastic_resin"
+    },
+    {
+      "item": "create_fanta:raw_plastic_resin"
+    },
+    {
+      "item": "create_fanta:raw_plastic_resin"
+    },
+    {
+      "item": "create_fanta:raw_plastic_resin"
+    },
+    {
+      "item": "create_fanta:raw_plastic_resin"
+    },
+    {
+      "item": "create_fanta:raw_plastic_resin"
+    },
+    {
+      "item": "create_fanta:raw_plastic_resin"
+    },
+    {
+      "item": "create_fanta:raw_plastic_resin"
+    },
+    {
+      "item": "create_fanta:raw_plastic_resin"
+    },
+    {
+      "item": "create_fanta:raw_plastic_resin"
+    },
+    {
+      "item": "create_fanta:raw_plastic_resin"
+    },
+    {
+      "item": "create_fanta:raw_plastic_resin"
+    },
+    {
+      "item": "create_fanta:raw_plastic_resin"
+    },
+    {
+      "item": "create_fanta:raw_plastic_resin"
+    },
+    {
+      "item": "create_fanta:raw_plastic_resin"
+    }
+  ],
+  "results": [
+    {
+		"item": "create_fanta:plastic_bottle"
+    }
+  ]
+}

@@ -22,7 +22,7 @@ public class FantaPlayerFinishesUsingItemProcedure {
 		if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 			_entity.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, (int) tick, 1));
 		if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-			_entity.addEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, (int) tick, 9));
+			_entity.addEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, (int) tick, 4));
 		if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 			_entity.addEffect(new MobEffectInstance(MobEffects.JUMP, (int) tick, 1));
 		if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())

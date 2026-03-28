@@ -1,0 +1,19 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "minecraft:white_dye"
+    },
+    {
+      "type": "neoforge:single",
+      "amount": 50,
+      "fluid": "create_fanta:petrol"
+    }
+  ],
+  "results": [
+    {
+		"item": "create_fanta:raw_plastic_resin"
+    }
+  ]
+}

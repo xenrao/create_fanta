@@ -204,7 +204,12 @@
       "locked_code": false,
       "registry_name": "test_area",
       "metadata": {
-        "dependencies": [],
+        "dependencies": [
+          {
+            "name": "blockstate",
+            "type": "blockstate"
+          }
+        ],
         "files": [
           "src/main/java/net/xenrao/cf/procedures/TestAreaProcedure.java"
         ]
@@ -279,6 +284,244 @@
         ]
       },
       "path": "~/Recipes"
+    },
+    {
+      "name": "SweetenedOrangeJuice",
+      "type": "fluid",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sweetened_orange_juice",
+      "metadata": {
+        "files": [
+          "src/main/java/net/xenrao/cf/fluid/types/SweetenedOrangeJuiceFluidType.java",
+          "src/main/resources/assets/create_fanta/blockstates/sweetened_orange_juice.json",
+          "src/main/java/net/xenrao/cf/block/SweetenedOrangeJuiceBlock.java",
+          "src/main/java/net/xenrao/cf/fluid/SweetenedOrangeJuiceFluid.java",
+          "src/main/java/net/xenrao/cf/item/SweetenedOrangeJuiceItem.java",
+          "src/main/resources/assets/create_fanta/models/block/sweetened_orange_juice.json",
+          "src/main/resources/assets/create_fanta/models/item/sweetened_orange_juice_bucket.json"
+        ]
+      },
+      "path": "~/Fluids"
+    },
+    {
+      "name": "SweetenedOrangeJuiceMixing",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "sweetened_orange_juice_mixing",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/create_fanta/recipes/sweetened_orange_juice_mixing.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "SweetenedOrangeJuiceBottle",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sweetened_orange_juice_bottle",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/create_fanta/models/item/sweetened_orange_juice_bottle.json",
+          "src/main/java/net/xenrao/cf/item/SweetenedOrangeJuiceBottleItem.java"
+        ]
+      }
+    },
+    {
+      "name": "SweetenedOrangeJuicePlayerFinishesUsingItem",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sweetened_orange_juice_player_finishes_using_item",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/xenrao/cf/procedures/SweetenedOrangeJuicePlayerFinishesUsingItemProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "SweetenedOrangeJuiceFilling",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "sweetened_orange_juice_filling",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/create_fanta/recipes/sweetened_orange_juice_filling.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "Co2",
+      "type": "fluid",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "co_2",
+      "metadata": {
+        "files": [
+          "src/main/java/net/xenrao/cf/fluid/Co2Fluid.java",
+          "src/main/java/net/xenrao/cf/block/Co2Block.java",
+          "src/main/resources/assets/create_fanta/models/item/co_2_bucket.json",
+          "src/main/java/net/xenrao/cf/item/Co2Item.java",
+          "src/main/resources/assets/create_fanta/blockstates/co_2.json",
+          "src/main/resources/assets/create_fanta/models/block/co_2.json",
+          "src/main/java/net/xenrao/cf/fluid/types/Co2FluidType.java"
+        ]
+      },
+      "path": "~/Fluids"
+    },
+    {
+      "name": "FantaCo2Filling",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "fanta_co_2_filling",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/create_fanta/recipes/fanta_co_2_filling.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "PetrolMixing",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "petrol_mixing",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/create_fanta/recipes/petrol_mixing.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "Petrol",
+      "type": "fluid",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "petrol",
+      "metadata": {
+        "files": [
+          "src/main/java/net/xenrao/cf/item/PetrolItem.java",
+          "src/main/java/net/xenrao/cf/fluid/types/PetrolFluidType.java",
+          "src/main/resources/assets/create_fanta/models/item/petrol_bucket.json",
+          "src/main/java/net/xenrao/cf/block/PetrolBlock.java",
+          "src/main/resources/assets/create_fanta/blockstates/petrol.json",
+          "src/main/resources/assets/create_fanta/models/block/petrol.json",
+          "src/main/java/net/xenrao/cf/fluid/PetrolFluid.java"
+        ]
+      },
+      "path": "~/Fluids"
+    },
+    {
+      "name": "RawPlasticResin",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "raw_plastic_resin",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/create_fanta/models/item/raw_plastic_resin.json",
+          "src/main/java/net/xenrao/cf/item/RawPlasticResinItem.java"
+        ]
+      }
+    },
+    {
+      "name": "RawPlasticResinMixing",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "raw_plastic_resin_mixing",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/create_fanta/recipes/raw_plastic_resin_mixing.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "EmptyPlasticBottleCompacting",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "empty_plastic_bottle_compacting",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/create_fanta/recipes/empty_plastic_bottle_compacting.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "OrangeTree",
+      "type": "feature",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "orange_tree",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/create_fanta/forge/biome_modifier/orange_tree_biome_modifier.json",
+          "src/main/resources/data/create_fanta/worldgen/configured_feature/orange_tree.json",
+          "src/main/resources/data/create_fanta/worldgen/placed_feature/orange_tree.json"
+        ]
+      }
+    },
+    {
+      "name": "OrangeTreeSapling",
+      "type": "plant",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "orange_tree_sapling",
+      "metadata": {
+        "files": [
+          "src/main/java/net/xenrao/cf/block/OrangeTreeSaplingBlock.java",
+          "src/main/resources/assets/create_fanta/blockstates/orange_tree_sapling.json",
+          "src/main/resources/assets/create_fanta/models/item/orange_tree_sapling.json",
+          "src/main/resources/assets/create_fanta/models/block/orange_tree_sapling.json",
+          "src/main/java/net/xenrao/cf/block/grower/OrangeTreeSaplingTreeGrower.java",
+          "src/main/resources/data/create_fanta/loot_tables/blocks/orange_tree_sapling.json"
+        ]
+      }
+    },
+    {
+      "name": "Orangetreeleaves",
+      "type": "block",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "orangetreeleaves",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/create_fanta/models/block/orangetreeleaves.json",
+          "src/main/java/net/xenrao/cf/block/OrangetreeleavesBlock.java",
+          "src/main/resources/assets/create_fanta/models/item/orangetreeleaves.json",
+          "src/main/resources/assets/create_fanta/blockstates/orangetreeleaves.json"
+        ]
+      }
+    },
+    {
+      "name": "OrangetreeleavesOnBlockRightclicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "orangetreeleaves_on_block_rightclicked",
+      "metadata": {
+        "dependencies": [],
+        "files": [
+          "src/main/java/net/xenrao/cf/procedures/OrangetreeleavesOnBlockRightclickedProcedure.java"
+        ]
+      }
     }
   ],
   "variable_elements": [],
@@ -289,8 +532,17 @@
       "CUSTOM:CreativePulpFilter"
     ],
     "BLOCKS:minecraft:replaceable": [
+      "~CUSTOM:Petrol",
+      "~CUSTOM:Co2",
+      "~CUSTOM:SweetenedOrangeJuice",
       "~CUSTOM:OrangeJuice",
       "~CUSTOM:UnfilteredOrangeJuice"
+    ],
+    "BLOCKS:minecraft:saplings": [
+      "~CUSTOM:OrangeTreeSapling"
+    ],
+    "BLOCKS:minecraft:leaves": [
+      "~CUSTOM:Orangetreeleaves"
     ]
   },
   "tab_element_order": {},
@@ -312,7 +564,23 @@
       "item.create_fanta.orange_juice_bucket": "Orange Juice Bucket",
       "item.create_fanta.plastic_bottle": "Plastic Bottle",
       "item.create_fanta.used_plastic_bottle": "Used Plastic Bottle",
-      "item.create_fanta.fanta": "Fanta"
+      "item.create_fanta.fanta": "Fanta",
+      "fluid.create_fanta.sweetened_orange_juice": "Sweetened Orange Juice",
+      "block.create_fanta.sweetened_orange_juice": "Sweetened Orange Juice",
+      "fluid_type.create_fanta.sweetened_orange_juice": "Sweetened Orange Juice",
+      "item.create_fanta.sweetened_orange_juice_bucket": "Sweetened Orange Juice Bucket",
+      "item.create_fanta.sweetened_orange_juice_bottle": "Sweetened Orange Juice",
+      "item.create_fanta.co_2_bucket": "Sweetened Orange Juice Bucket",
+      "fluid_type.create_fanta.co_2": "CO₂",
+      "fluid.create_fanta.co_2": "CO₂",
+      "block.create_fanta.co_2": "CO₂",
+      "fluid_type.create_fanta.petrol": "Petrol",
+      "block.create_fanta.petrol": "Petrol",
+      "item.create_fanta.petrol_bucket": "Petrol Bucket",
+      "fluid.create_fanta.petrol": "Petrol",
+      "item.create_fanta.raw_plastic_resin": "Raw Plastic Resin",
+      "block.create_fanta.orange_tree_sapling": "Orange Tree Sapling",
+      "block.create_fanta.orangetreeleaves": "Orange Tree Leaves"
     }
   },
   "metadata": {
@@ -324,7 +592,8 @@
       "src/main/resources/pack.mcmeta",
       "src/main/java/net/xenrao/cf/init/CreateFantaModTabs.java",
       "src/main/resources/META-INF/mods.toml",
-      "src/main/java/net/xenrao/cf/CreateFantaMod.java"
+      "src/main/java/net/xenrao/cf/CreateFantaMod.java",
+      "src/main/resources/META-INF/accesstransformer.cfg"
     ]
   },
   "foldersRoot": {

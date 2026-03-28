@@ -1,0 +1,19 @@
+
+{
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "item": "create_fanta:plastic_bottle"
+    },
+    {
+      "type": "neoforge:single",
+      "amount": 250,
+      "fluid": "create_fanta:sweetened_orange_juice"
+    }
+  ],
+  "results": [
+    {
+      "item": "create_fanta:sweetened_orange_juice_bottle"
+    }
+  ]
+}

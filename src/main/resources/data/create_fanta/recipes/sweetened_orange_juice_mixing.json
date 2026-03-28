@@ -1,0 +1,19 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "type": "neoforge:single",
+      "amount": 250,
+      "fluid": "create_fanta:orange_juice"
+    }
+  ],
+  "results": [
+    {
+      "amount": 250,
+      "fluid": "create_fanta:sweetened_orange_juice"
+    }
+  ]
+}

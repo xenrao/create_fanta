@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "fruit=false": {
+      "model": "create_fanta:block/orangetreeleaves"
+    },
+    "fruit=true": {
+      "model": "create_fanta:block/orangetreeleaves_fruit"
+    }
+  }
+}

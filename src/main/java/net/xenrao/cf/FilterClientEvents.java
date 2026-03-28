@@ -15,12 +15,14 @@ public class FilterClientEvents {
     @SubscribeEvent
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerBlockEntityRenderer(ModRegistry.FILTER_BE.get(), FilterRenderer::new);
+        event.registerBlockEntityRenderer(ModRegistry.GAS_CONVERTER_BE.get(), GasConverterReservoirRenderer::new);
     }
     @SubscribeEvent
     public static void clientSetup(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
         	FilterPartialModels.init();
             ItemBlockRenderTypes.setRenderLayer(ModRegistry.FILTER_BLOCK.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(ModRegistry.GAS_CONVERTER_BLOCK.get(), RenderType.cutoutMipped());
         });
     }
 }

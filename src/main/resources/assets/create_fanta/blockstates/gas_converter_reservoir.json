@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "active=false": {
+      "model": "create_fanta:block/gas_converter_reservoir"
+    },
+    "active=true": {
+      "model": "create_fanta:block/gas_converter_reservoir"
+    }
+  }
+}

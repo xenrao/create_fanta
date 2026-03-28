@@ -204,12 +204,7 @@
       "locked_code": false,
       "registry_name": "test_area",
       "metadata": {
-        "dependencies": [
-          {
-            "name": "blockstate",
-            "type": "blockstate"
-          }
-        ],
+        "dependencies": [],
         "files": [
           "src/main/java/net/xenrao/cf/procedures/TestAreaProcedure.java"
         ]
@@ -522,6 +517,67 @@
           "src/main/java/net/xenrao/cf/procedures/OrangetreeleavesOnBlockRightclickedProcedure.java"
         ]
       }
+    },
+    {
+      "name": "GasConverterReservoirBlock",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "gas_converter_reservoir_block",
+      "metadata": {
+        "files": [
+          "src/main/java/net/xenrao/cf/GasConverterReservoirBlock.java"
+        ]
+      }
+    },
+    {
+      "name": "GasConverterReservoirBlockEntity",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "gas_converter_reservoir_block_entity",
+      "metadata": {
+        "files": [
+          "src/main/java/net/xenrao/cf/GasConverterReservoirBlockEntity.java"
+        ]
+      }
+    },
+    {
+      "name": "AirCurrentMixin",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "air_current_mixin",
+      "metadata": {
+        "files": [
+          "src/main/java/net/xenrao/cf/AirCurrentMixin.java"
+        ]
+      }
+    },
+    {
+      "name": "GasConverterReservoirRenderer",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "gas_converter_reservoir_renderer",
+      "metadata": {
+        "files": [
+          "src/main/java/net/xenrao/cf/GasConverterReservoirRenderer.java"
+        ]
+      }
+    },
+    {
+      "name": "OrangeCutting",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "orange_cutting",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/create_fanta/recipes/orange_cutting.json"
+        ]
+      },
+      "path": "~/Recipes"
     }
   ],
   "variable_elements": [],
@@ -543,6 +599,9 @@
     ],
     "BLOCKS:minecraft:leaves": [
       "~CUSTOM:Orangetreeleaves"
+    ],
+    "BLOCKS:create:fan_transparent": [
+      "Blocks.STONE#3"
     ]
   },
   "tab_element_order": {},
@@ -580,7 +639,8 @@
       "fluid.create_fanta.petrol": "Petrol",
       "item.create_fanta.raw_plastic_resin": "Raw Plastic Resin",
       "block.create_fanta.orange_tree_sapling": "Orange Tree Sapling",
-      "block.create_fanta.orangetreeleaves": "Orange Tree Leaves"
+      "block.create_fanta.orangetreeleaves": "Orange Tree Leaves",
+      "block.create_fanta.gas_converter_reservoir": "Gas Converter Reservoir"
     }
   },
   "metadata": {

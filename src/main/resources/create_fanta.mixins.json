@@ -4,7 +4,8 @@
   "package": "net.xenrao.cf.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "FluidTransportBehaviourMixin"
+    "FluidTransportBehaviourMixin",
+    "AirCurrentMixin"
   ],
   "client": [],
   "injectors": {

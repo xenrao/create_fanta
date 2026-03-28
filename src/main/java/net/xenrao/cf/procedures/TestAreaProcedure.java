@@ -1,13 +1,9 @@
 package net.xenrao.cf.procedures;
 
-import net.xenrao.cf.CreateFantaMod;
-
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.level.SaplingGrowTreeEvent;
-
-import net.minecraft.world.level.block.state.BlockState;
 
 import javax.annotation.Nullable;
 
@@ -15,14 +11,13 @@ import javax.annotation.Nullable;
 public class TestAreaProcedure {
 	@SubscribeEvent
 	public static void onSaplingGrow(SaplingGrowTreeEvent event) {
-		execute(event, event.getLevel().getBlockState(event.getPos()));
+		execute(event);
 	}
 
-	public static void execute(BlockState blockstate) {
-		execute(null, blockstate);
+	public static void execute() {
+		execute(null);
 	}
 
-	private static void execute(@Nullable Event event, BlockState blockstate) {
-		CreateFantaMod.LOGGER.info(blockstate);
+	private static void execute(@Nullable Event event) {
 	}
 }

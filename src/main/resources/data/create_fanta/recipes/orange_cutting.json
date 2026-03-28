@@ -1,0 +1,15 @@
+{
+  "type": "create:cutting",
+  "ingredients": [
+    {
+      "item": "create_fanta:orange"
+    }
+  ],
+  "processing_time": 50,
+  "results": [
+    {
+      "count": 2,
+      "item": "create_fanta:half_orange"
+    }
+  ]
+}

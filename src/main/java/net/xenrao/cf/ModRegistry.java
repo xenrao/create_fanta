@@ -12,6 +12,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.xenrao.cf.block.FilterBlock;
 import net.xenrao.cf.block.FilterBlockEntity;
+import net.xenrao.cf.block.GasConverterReservoirBlock;
+import net.xenrao.cf.block.GasConverterReservoirBlockEntity;
 
 public class ModRegistry {
 

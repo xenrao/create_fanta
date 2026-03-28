@@ -31,5 +31,6 @@
   "fluid.create_fanta.petrol": "Petrol",
   "item.create_fanta.raw_plastic_resin": "Raw Plastic Resin",
   "block.create_fanta.orange_tree_sapling": "Orange Tree Sapling",
-  "block.create_fanta.orangetreeleaves": "Orange Tree Leaves"
+  "block.create_fanta.orangetreeleaves": "Orange Tree Leaves",
+  "block.create_fanta.gas_converter_reservoir": "Gas Converter Reservoir"
 }

@@ -31,6 +31,7 @@ import org.jetbrains.annotations.Nullable;
 import net.xenrao.cf.ModRegistry;
 import net.xenrao.cf.item.PulpFilterItem;
 import net.xenrao.cf.item.CreativePulpFilterItem;
+import net.xenrao.cf.init.CreateFantaModFluids;
 
 import java.util.List;
 import net.minecraft.world.level.BlockAndTintGetter;
@@ -228,7 +229,7 @@ public class FilterBlockEntity extends KineticBlockEntity implements IHaveGoggle
         int rate = Mth.clamp((int) (spd / 16f), 1, 512);
 
         if (!inTank.isEmpty()
-            && inTank.getFluid().getFluid().isSame(Fluids.WATER)) {
+            && inTank.getFluid().getFluid().isSame(CreateFantaModFluids.UNFILTERED_ORANGE_JUICE.get())) {
             timer -= rate;
             if (timer <= 0) {
                 convert();
@@ -242,18 +243,18 @@ public class FilterBlockEntity extends KineticBlockEntity implements IHaveGoggle
     private void convert() {
         if (inTank.getFluidAmount() < BATCH)
             return;
-        if (!inTank.getFluid().getFluid().isSame(Fluids.WATER))
+        if (!inTank.getFluid().getFluid().isSame(CreateFantaModFluids.UNFILTERED_ORANGE_JUICE.get()))
             return;
 
         int outSpace = outTank.getCapacity() - outTank.getFluidAmount();
         if (outSpace < BATCH)
             return;
         if (!outTank.isEmpty()
-            && !outTank.getFluid().getFluid().isSame(Fluids.LAVA))
+            && !outTank.getFluid().getFluid().isSame(CreateFantaModFluids.ORANGE_JUICE.get()))
             return;
 
         inTank.drain(BATCH, FluidAction.EXECUTE);
-        outTank.fill(new FluidStack(Fluids.LAVA, BATCH - LOSS), FluidAction.EXECUTE);
+        outTank.fill(new FluidStack(CreateFantaModFluids.ORANGE_JUICE.get(), BATCH - LOSS), FluidAction.EXECUTE);
         damageFilter();
         setChanged();
     }
@@ -331,8 +332,8 @@ public class FilterBlockEntity extends KineticBlockEntity implements IHaveGoggle
 	        return true;
 	    }
 	
-	    int percent = (remaining * 100) / maxDmg;
-	    int bars = (remaining * 50) / maxDmg;
+	    int percent = Math.max((remaining * 100) / maxDmg , 1);
+	    int bars = Math.max((remaining * 50) / maxDmg , 1);
 	
 	    StringBuilder bar = new StringBuilder();
 	    bar.append("\u00a7a");
@@ -386,9 +387,9 @@ public class FilterBlockEntity extends KineticBlockEntity implements IHaveGoggle
         public @NotNull FluidStack getFluidInTank(int t) { return inTank.getFluid(); }
         public int getTankCapacity(int t) { return inTank.getCapacity(); }
         public boolean isFluidValid(int t, @NotNull FluidStack s) {
-            return s.getFluid().isSame(Fluids.WATER); }
+            return s.getFluid().isSame(CreateFantaModFluids.UNFILTERED_ORANGE_JUICE.get()); }
         public int fill(FluidStack r, FluidAction a) {
-            return r.getFluid().isSame(Fluids.WATER) ? inTank.fill(r, a) : 0; }
+            return r.getFluid().isSame(CreateFantaModFluids.UNFILTERED_ORANGE_JUICE.get()) ? inTank.fill(r, a) : 0; }
         public @NotNull FluidStack drain(FluidStack s, FluidAction a) {
             return FluidStack.EMPTY; }
         public @NotNull FluidStack drain(int m, FluidAction a) {
@@ -402,7 +403,7 @@ public class FilterBlockEntity extends KineticBlockEntity implements IHaveGoggle
         public boolean isFluidValid(int t, @NotNull FluidStack s) { return false; }
         public int fill(FluidStack r, FluidAction a) { return 0; }
         public @NotNull FluidStack drain(FluidStack r, FluidAction a) {
-            return r.getFluid().isSame(Fluids.LAVA)
+            return r.getFluid().isSame(CreateFantaModFluids.ORANGE_JUICE.get())
                 ? outTank.drain(r.getAmount(), a) : FluidStack.EMPTY; }
         public @NotNull FluidStack drain(int m, FluidAction a) {
             return outTank.drain(m, a); }
@@ -415,12 +416,12 @@ public class FilterBlockEntity extends KineticBlockEntity implements IHaveGoggle
         public int getTankCapacity(int t) {
             return t == 0 ? inTank.getCapacity() : outTank.getCapacity(); }
         public boolean isFluidValid(int t, @NotNull FluidStack s) {
-            return t == 0 ? s.getFluid().isSame(Fluids.WATER)
-                          : s.getFluid().isSame(Fluids.LAVA); }
+            return t == 0 ? s.getFluid().isSame(CreateFantaModFluids.UNFILTERED_ORANGE_JUICE.get())
+                          : s.getFluid().isSame(CreateFantaModFluids.ORANGE_JUICE.get()); }
         public int fill(FluidStack r, FluidAction a) {
-            return r.getFluid().isSame(Fluids.WATER) ? inTank.fill(r, a) : 0; }
+            return r.getFluid().isSame(CreateFantaModFluids.UNFILTERED_ORANGE_JUICE.get()) ? inTank.fill(r, a) : 0; }
         public @NotNull FluidStack drain(FluidStack r, FluidAction a) {
-            return r.getFluid().isSame(Fluids.LAVA)
+            return r.getFluid().isSame(CreateFantaModFluids.ORANGE_JUICE.get())
                 ? outTank.drain(r.getAmount(), a) : FluidStack.EMPTY; }
         public @NotNull FluidStack drain(int m, FluidAction a) {
             return outTank.drain(m, a); }

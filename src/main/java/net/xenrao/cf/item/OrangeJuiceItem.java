@@ -13,9 +13,9 @@ import net.minecraft.nbt.CompoundTag;
 
 import javax.annotation.Nullable;
 
-public class TestfItem extends BucketItem {
-	public TestfItem() {
-		super(CreateFantaModFluids.TESTF, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)
+public class OrangeJuiceItem extends BucketItem {
+	public OrangeJuiceItem() {
+		super(CreateFantaModFluids.ORANGE_JUICE, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)
 
 		);
 	}

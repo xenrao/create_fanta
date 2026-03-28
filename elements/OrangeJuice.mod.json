@@ -2,14 +2,14 @@
   "_fv": 79,
   "_type": "fluid",
   "definition": {
-    "name": "Testf",
-    "bucketName": "Testf Bucket",
-    "textureStill": "minecraft:water_still",
-    "textureFlowing": "minecraft:water_flow",
+    "name": "Orange Juice",
+    "bucketName": "Orange Juice Bucket",
+    "textureStill": "orange_juice_still",
+    "textureFlowing": "orange_juice_flow",
     "textureRenderOverlay": "",
     "hasFog": true,
     "fogColor": {
-      "value": -39424,
+      "value": -13261,
       "falpha": 0.0
     },
     "fogStartDistance": {

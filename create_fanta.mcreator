@@ -33,7 +33,8 @@
         "files": [
           "src/main/resources/data/create_fanta/recipes/orange_emptying.json"
         ]
-      }
+      },
+      "path": "~/Recipes"
     },
     {
       "name": "UnfilteredOrangeJuice",
@@ -48,9 +49,11 @@
           "src/main/resources/assets/create_fanta/models/item/unfiltered_orange_juice_bucket.json",
           "src/main/java/net/xenrao/cf/block/UnfilteredOrangeJuiceBlock.java",
           "src/main/resources/assets/create_fanta/blockstates/unfiltered_orange_juice.json",
-          "src/main/resources/assets/create_fanta/models/block/unfiltered_orange_juice.json"
+          "src/main/resources/assets/create_fanta/models/block/unfiltered_orange_juice.json",
+          "src/main/java/net/xenrao/cf/item/UnfilteredOrangeJuiceItem.java"
         ]
-      }
+      },
+      "path": "~/Fluids"
     },
     {
       "name": "Halforange",
@@ -176,22 +179,106 @@
       }
     },
     {
-      "name": "Testf",
+      "name": "OrangeJuice",
       "type": "fluid",
       "compiles": true,
-      "locked_code": true,
-      "registry_name": "testf",
+      "locked_code": false,
+      "registry_name": "orange_juice",
       "metadata": {
         "files": [
-          "src/main/java/net/xenrao/cf/block/TestfBlock.java",
-          "src/main/resources/assets/create_fanta/blockstates/testf.json",
-          "src/main/resources/assets/create_fanta/models/item/testf_bucket.json",
-          "src/main/java/net/xenrao/cf/item/TestfItem.java",
-          "src/main/resources/assets/create_fanta/models/block/testf.json",
-          "src/main/java/net/xenrao/cf/fluid/TestfFluid.java",
-          "src/main/java/net/xenrao/cf/fluid/types/TestfFluidType.java"
+          "src/main/java/net/xenrao/cf/item/OrangeJuiceItem.java",
+          "src/main/java/net/xenrao/cf/block/OrangeJuiceBlock.java",
+          "src/main/resources/assets/create_fanta/models/block/orange_juice.json",
+          "src/main/java/net/xenrao/cf/fluid/OrangeJuiceFluid.java",
+          "src/main/resources/assets/create_fanta/blockstates/orange_juice.json",
+          "src/main/java/net/xenrao/cf/fluid/types/OrangeJuiceFluidType.java",
+          "src/main/resources/assets/create_fanta/models/item/orange_juice_bucket.json"
+        ]
+      },
+      "path": "~/Fluids"
+    },
+    {
+      "name": "TestArea",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "test_area",
+      "metadata": {
+        "dependencies": [],
+        "files": [
+          "src/main/java/net/xenrao/cf/procedures/TestAreaProcedure.java"
         ]
       }
+    },
+    {
+      "name": "PlasticBottle",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "plastic_bottle",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/create_fanta/models/item/plastic_bottle.json",
+          "src/main/java/net/xenrao/cf/item/PlasticBottleItem.java"
+        ]
+      }
+    },
+    {
+      "name": "UsedPlasticBottle",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "used_plastic_bottle",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/create_fanta/models/item/used_plastic_bottle.json",
+          "src/main/java/net/xenrao/cf/item/UsedPlasticBottleItem.java"
+        ]
+      }
+    },
+    {
+      "name": "Fanta",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fanta",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/create_fanta/models/item/fanta.json",
+          "src/main/java/net/xenrao/cf/item/FantaItem.java"
+        ]
+      }
+    },
+    {
+      "name": "FantaPlayerFinishesUsingItem",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fanta_player_finishes_using_item",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/xenrao/cf/procedures/FantaPlayerFinishesUsingItemProcedure.java"
+        ]
+      }
+    },
+    {
+      "name": "BottleCleanMixing",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "bottle_clean_mixing",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/create_fanta/recipes/bottle_clean_mixing.json"
+        ]
+      },
+      "path": "~/Recipes"
     }
   ],
   "variable_elements": [],
@@ -202,7 +289,7 @@
       "CUSTOM:CreativePulpFilter"
     ],
     "BLOCKS:minecraft:replaceable": [
-      "~CUSTOM:Testf",
+      "~CUSTOM:OrangeJuice",
       "~CUSTOM:UnfilteredOrangeJuice"
     ]
   },
@@ -218,10 +305,14 @@
       "item.create_fanta.pulp_filter": "Pulp Filter",
       "block.create_fanta.filter_block": "Filter",
       "item.create_fanta.creative_pulp_filter": "Creative Pulp Filter",
-      "block.create_fanta.testf": "Testf",
-      "fluid_type.create_fanta.testf": "Testf",
-      "fluid.create_fanta.testf": "Testf",
-      "item.create_fanta.testf_bucket": "Testf Bucket"
+      "block.create_fanta.orange_juice": "Orange Juice",
+      "fluid.create_fanta.orange_juice": "Orange Juice",
+      "fluid_type.create_fanta.orange_juice": "Orange Juice",
+      "item.create_fanta.unfiltered_orange_juice_bucket": "Unfiltered Orange Juice Bucket",
+      "item.create_fanta.orange_juice_bucket": "Orange Juice Bucket",
+      "item.create_fanta.plastic_bottle": "Plastic Bottle",
+      "item.create_fanta.used_plastic_bottle": "Used Plastic Bottle",
+      "item.create_fanta.fanta": "Fanta"
     }
   },
   "metadata": {
@@ -238,7 +329,16 @@
   },
   "foldersRoot": {
     "name": "~",
-    "children": []
+    "children": [
+      {
+        "name": "Recipes",
+        "children": []
+      },
+      {
+        "name": "Fluids",
+        "children": []
+      }
+    ]
   },
   "workspaceSettings": {
     "modid": "create_fanta",

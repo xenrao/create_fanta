@@ -4,7 +4,7 @@
 package net.xenrao.cf.init;
 
 import net.xenrao.cf.fluid.UnfilteredOrangeJuiceFluid;
-import net.xenrao.cf.fluid.TestfFluid;
+import net.xenrao.cf.fluid.OrangeJuiceFluid;
 import net.xenrao.cf.CreateFantaMod;
 
 import net.minecraftforge.registries.RegistryObject;
@@ -24,8 +24,8 @@ public class CreateFantaModFluids {
 	public static final DeferredRegister<Fluid> REGISTRY = DeferredRegister.create(ForgeRegistries.FLUIDS, CreateFantaMod.MODID);
 	public static final RegistryObject<FlowingFluid> UNFILTERED_ORANGE_JUICE = REGISTRY.register("unfiltered_orange_juice", () -> new UnfilteredOrangeJuiceFluid.Source());
 	public static final RegistryObject<FlowingFluid> FLOWING_UNFILTERED_ORANGE_JUICE = REGISTRY.register("flowing_unfiltered_orange_juice", () -> new UnfilteredOrangeJuiceFluid.Flowing());
-	public static final RegistryObject<FlowingFluid> TESTF = REGISTRY.register("testf", () -> new TestfFluid.Source());
-	public static final RegistryObject<FlowingFluid> FLOWING_TESTF = REGISTRY.register("flowing_testf", () -> new TestfFluid.Flowing());
+	public static final RegistryObject<FlowingFluid> ORANGE_JUICE = REGISTRY.register("orange_juice", () -> new OrangeJuiceFluid.Source());
+	public static final RegistryObject<FlowingFluid> FLOWING_ORANGE_JUICE = REGISTRY.register("flowing_orange_juice", () -> new OrangeJuiceFluid.Flowing());
 
 	@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 	public static class FluidsClientSideHandler {
@@ -33,8 +33,8 @@ public class CreateFantaModFluids {
 		public static void clientSetup(FMLClientSetupEvent event) {
 			ItemBlockRenderTypes.setRenderLayer(UNFILTERED_ORANGE_JUICE.get(), RenderType.translucent());
 			ItemBlockRenderTypes.setRenderLayer(FLOWING_UNFILTERED_ORANGE_JUICE.get(), RenderType.translucent());
-			ItemBlockRenderTypes.setRenderLayer(TESTF.get(), RenderType.translucent());
-			ItemBlockRenderTypes.setRenderLayer(FLOWING_TESTF.get(), RenderType.translucent());
+			ItemBlockRenderTypes.setRenderLayer(ORANGE_JUICE.get(), RenderType.translucent());
+			ItemBlockRenderTypes.setRenderLayer(FLOWING_ORANGE_JUICE.get(), RenderType.translucent());
 		}
 	}
 }

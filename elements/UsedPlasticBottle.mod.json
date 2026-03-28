@@ -2,15 +2,15 @@
   "_fv": 79,
   "_type": "item",
   "definition": {
-    "renderType": 1,
-    "texture": "minecraft:light_15",
-    "customModelName": "pulpfilter:creative",
+    "renderType": 0,
+    "texture": "used_plastic_bottle",
+    "customModelName": "Normal",
     "guiTexture": "",
     "customProperties": {},
     "states": [],
     "animations": [],
-    "name": "Creative Pulp Filter",
-    "rarity": "EPIC",
+    "name": "Used Plastic Bottle",
+    "rarity": "COMMON",
     "creativeTabs": [
       {
         "value": "CUSTOM:Createfanta"

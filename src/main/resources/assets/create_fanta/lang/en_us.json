@@ -8,8 +8,12 @@
   "item.create_fanta.pulp_filter": "Pulp Filter",
   "block.create_fanta.filter_block": "Filter",
   "item.create_fanta.creative_pulp_filter": "Creative Pulp Filter",
-  "block.create_fanta.testf": "Testf",
-  "fluid_type.create_fanta.testf": "Testf",
-  "fluid.create_fanta.testf": "Testf",
-  "item.create_fanta.testf_bucket": "Testf Bucket"
+  "block.create_fanta.orange_juice": "Orange Juice",
+  "fluid.create_fanta.orange_juice": "Orange Juice",
+  "fluid_type.create_fanta.orange_juice": "Orange Juice",
+  "item.create_fanta.unfiltered_orange_juice_bucket": "Unfiltered Orange Juice Bucket",
+  "item.create_fanta.orange_juice_bucket": "Orange Juice Bucket",
+  "item.create_fanta.plastic_bottle": "Plastic Bottle",
+  "item.create_fanta.used_plastic_bottle": "Used Plastic Bottle",
+  "item.create_fanta.fanta": "Fanta"
 }

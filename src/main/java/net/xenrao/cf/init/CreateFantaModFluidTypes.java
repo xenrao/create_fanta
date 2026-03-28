@@ -4,7 +4,7 @@
 package net.xenrao.cf.init;
 
 import net.xenrao.cf.fluid.types.UnfilteredOrangeJuiceFluidType;
-import net.xenrao.cf.fluid.types.TestfFluidType;
+import net.xenrao.cf.fluid.types.OrangeJuiceFluidType;
 import net.xenrao.cf.CreateFantaMod;
 
 import net.minecraftforge.registries.RegistryObject;
@@ -15,5 +15,5 @@ import net.minecraftforge.fluids.FluidType;
 public class CreateFantaModFluidTypes {
 	public static final DeferredRegister<FluidType> REGISTRY = DeferredRegister.create(ForgeRegistries.Keys.FLUID_TYPES, CreateFantaMod.MODID);
 	public static final RegistryObject<FluidType> UNFILTERED_ORANGE_JUICE_TYPE = REGISTRY.register("unfiltered_orange_juice", () -> new UnfilteredOrangeJuiceFluidType());
-	public static final RegistryObject<FluidType> TESTF_TYPE = REGISTRY.register("testf", () -> new TestfFluidType());
+	public static final RegistryObject<FluidType> ORANGE_JUICE_TYPE = REGISTRY.register("orange_juice", () -> new OrangeJuiceFluidType());
 }

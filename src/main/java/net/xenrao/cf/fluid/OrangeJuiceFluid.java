@@ -12,15 +12,15 @@ import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.LiquidBlock;
 
-public abstract class TestfFluid extends ForgeFlowingFluid {
-	public static final ForgeFlowingFluid.Properties PROPERTIES = new ForgeFlowingFluid.Properties(() -> CreateFantaModFluidTypes.TESTF_TYPE.get(), () -> CreateFantaModFluids.TESTF.get(), () -> CreateFantaModFluids.FLOWING_TESTF.get())
-			.explosionResistance(100f).bucket(() -> CreateFantaModItems.TESTF_BUCKET.get()).block(() -> (LiquidBlock) CreateFantaModBlocks.TESTF.get());
+public abstract class OrangeJuiceFluid extends ForgeFlowingFluid {
+	public static final ForgeFlowingFluid.Properties PROPERTIES = new ForgeFlowingFluid.Properties(() -> CreateFantaModFluidTypes.ORANGE_JUICE_TYPE.get(), () -> CreateFantaModFluids.ORANGE_JUICE.get(),
+			() -> CreateFantaModFluids.FLOWING_ORANGE_JUICE.get()).explosionResistance(100f).bucket(() -> CreateFantaModItems.ORANGE_JUICE_BUCKET.get()).block(() -> (LiquidBlock) CreateFantaModBlocks.ORANGE_JUICE.get());
 
-	private TestfFluid() {
+	private OrangeJuiceFluid() {
 		super(PROPERTIES);
 	}
 
-	public static class Source extends TestfFluid {
+	public static class Source extends OrangeJuiceFluid {
 		public int getAmount(FluidState state) {
 			return 8;
 		}
@@ -30,7 +30,7 @@ public abstract class TestfFluid extends ForgeFlowingFluid {
 		}
 	}
 
-	public static class Flowing extends TestfFluid {
+	public static class Flowing extends OrangeJuiceFluid {
 		protected void createFluidStateDefinition(StateDefinition.Builder<Fluid, FluidState> builder) {
 			super.createFluidStateDefinition(builder);
 			builder.add(LEVEL);

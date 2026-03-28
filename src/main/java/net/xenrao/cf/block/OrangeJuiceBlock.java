@@ -8,8 +8,8 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.LiquidBlock;
 
-public class TestfBlock extends LiquidBlock {
-	public TestfBlock() {
-		super(() -> CreateFantaModFluids.TESTF.get(), BlockBehaviour.Properties.of().mapColor(MapColor.WATER).strength(100f).noCollission().noLootTable().liquid().pushReaction(PushReaction.DESTROY).sound(SoundType.EMPTY).replaceable());
+public class OrangeJuiceBlock extends LiquidBlock {
+	public OrangeJuiceBlock() {
+		super(() -> CreateFantaModFluids.ORANGE_JUICE.get(), BlockBehaviour.Properties.of().mapColor(MapColor.WATER).strength(100f).noCollission().noLootTable().liquid().pushReaction(PushReaction.DESTROY).sound(SoundType.EMPTY).replaceable());
 	}
 }

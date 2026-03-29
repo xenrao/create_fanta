@@ -13,7 +13,7 @@ import net.minecraft.world.level.block.LiquidBlock;
 
 public abstract class SweetenedOrangeJuiceFluid extends ForgeFlowingFluid {
 	public static final ForgeFlowingFluid.Properties PROPERTIES = new ForgeFlowingFluid.Properties(() -> CreateFantaModFluidTypes.SWEETENED_ORANGE_JUICE_TYPE.get(), () -> CreateFantaModFluids.SWEETENED_ORANGE_JUICE.get(),
-			() -> CreateFantaModFluids.FLOWING_SWEETENED_ORANGE_JUICE.get()).explosionResistance(100f).block(() -> (LiquidBlock) CreateFantaModBlocks.SWEETENED_ORANGE_JUICE.get());
+			() -> CreateFantaModFluids.FLOWING_SWEETENED_ORANGE_JUICE.get());
 
 	private SweetenedOrangeJuiceFluid() {
 		super(PROPERTIES);

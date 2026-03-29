@@ -13,7 +13,7 @@ import net.minecraft.world.level.block.LiquidBlock;
 
 public abstract class Co2Fluid extends ForgeFlowingFluid {
 	public static final ForgeFlowingFluid.Properties PROPERTIES = new ForgeFlowingFluid.Properties(() -> CreateFantaModFluidTypes.CO_2_TYPE.get(), () -> CreateFantaModFluids.CO_2.get(), () -> CreateFantaModFluids.FLOWING_CO_2.get())
-			.explosionResistance(100f).block(() -> (LiquidBlock) CreateFantaModBlocks.CO_2.get());
+			.explosionResistance(100f);
 
 	private Co2Fluid() {
 		super(PROPERTIES);

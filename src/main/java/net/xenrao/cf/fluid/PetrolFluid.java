@@ -13,7 +13,7 @@ import net.minecraft.world.level.block.LiquidBlock;
 
 public abstract class PetrolFluid extends ForgeFlowingFluid {
 	public static final ForgeFlowingFluid.Properties PROPERTIES = new ForgeFlowingFluid.Properties(() -> CreateFantaModFluidTypes.PETROL_TYPE.get(), () -> CreateFantaModFluids.PETROL.get(), () -> CreateFantaModFluids.FLOWING_PETROL.get())
-			.explosionResistance(100f).tickRate(50).block(() -> (LiquidBlock) CreateFantaModBlocks.PETROL.get());
+			.explosionResistance(100f).tickRate(50);
 
 	private PetrolFluid() {
 		super(PROPERTIES);

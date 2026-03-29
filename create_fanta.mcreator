@@ -40,7 +40,7 @@
       "name": "UnfilteredOrangeJuice",
       "type": "fluid",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "unfiltered_orange_juice",
       "metadata": {
         "files": [
@@ -181,7 +181,7 @@
       "name": "OrangeJuice",
       "type": "fluid",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "orange_juice",
       "metadata": {
         "files": [
@@ -269,7 +269,7 @@
       "name": "SweetenedOrangeJuice",
       "type": "fluid",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "sweetened_orange_juice",
       "metadata": {
         "files": [
@@ -344,7 +344,7 @@
       "name": "Co2",
       "type": "fluid",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "co_2",
       "metadata": {
         "files": [
@@ -388,7 +388,7 @@
       "name": "Petrol",
       "type": "fluid",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "petrol",
       "metadata": {
         "files": [

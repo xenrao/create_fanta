@@ -135,32 +135,10 @@
       "bonus_rolls": 0.0,
       "conditions": [
         {
-          "condition": "minecraft:inverted",
-          "term": {
-            "condition": "minecraft:any_of",
-            "terms": [
-              {
-                "condition": "minecraft:match_tool",
-                "predicate": {
-                  "items": [
-                    "minecraft:shears"
-                  ]
-                }
-              },
-              {
-                "condition": "minecraft:match_tool",
-                "predicate": {
-                  "enchantments": [
-                    {
-                      "enchantment": "minecraft:silk_touch",
-                      "levels": {
-                        "min": 1
-                      }
-                    }
-                  ]
-                }
-              }
-            ]
+          "condition": "minecraft:block_state_property",
+          "block": "create_fanta:orangetreeleaves",
+          "properties": {
+            "fruit": "true"
           }
         }
       ],
@@ -170,20 +148,9 @@
           "conditions": [
             {
               "condition": "minecraft:survives_explosion"
-            },
-            {
-              "chances": [
-                0.005,
-                0.0055555557,
-                0.00625,
-                0.008333334,
-                0.025
-              ],
-              "condition": "minecraft:table_bonus",
-              "enchantment": "minecraft:fortune"
             }
           ],
-          "name": "minecraft:apple"
+          "name": "create_fanta:orange"
         }
       ],
       "rolls": 1.0

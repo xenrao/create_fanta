@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "minecraft:block/birch_sapling"
+    "layer0": "create_fanta:block/orange_tree_sapling"
   }
 }

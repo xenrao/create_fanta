@@ -463,7 +463,7 @@
       "name": "OrangeTree",
       "type": "feature",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "orange_tree",
       "metadata": {
         "files": [
@@ -502,19 +502,6 @@
           "src/main/java/net/xenrao/cf/block/OrangetreeleavesBlock.java",
           "src/main/resources/assets/create_fanta/models/item/orangetreeleaves.json",
           "src/main/resources/assets/create_fanta/blockstates/orangetreeleaves.json"
-        ]
-      }
-    },
-    {
-      "name": "OrangetreeleavesOnBlockRightclicked",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "orangetreeleaves_on_block_rightclicked",
-      "metadata": {
-        "dependencies": [],
-        "files": [
-          "src/main/java/net/xenrao/cf/procedures/OrangetreeleavesOnBlockRightclickedProcedure.java"
         ]
       }
     },

@@ -1,7 +1,38 @@
 {
-  "parent": "block/leaves",
   "textures": {
-    "all": "create_fanta:block/orange_tree_leaves_2",
-    "particle": "create_fanta:block/orange_tree_leaves_2"
-  }
+    "leaves": "create_fanta:block/orangetreeleaves",
+    "fruit": "create_fanta:block/orangetreeleaves_fruit",
+    "particle": "create_fanta:block/orangetreeleaves"
+  },
+  "elements": [
+    {
+      "comment": "Katman 1: Yapraklar - biome rengi ALIR",
+      "from": [0, 0, 0],
+      "to": [16, 16, 16],
+      "faces": {
+        "down":  {"uv": [0, 0, 16, 16], "texture": "#leaves", "tintindex": 0, "cullface": "down"},
+        "up":    {"uv": [0, 0, 16, 16], "texture": "#leaves", "tintindex": 0, "cullface": "up"},
+        "north": {"uv": [0, 0, 16, 16], "texture": "#leaves", "tintindex": 0, "cullface": "north"},
+        "south": {"uv": [0, 0, 16, 16], "texture": "#leaves", "tintindex": 0, "cullface": "south"},
+        "west":  {"uv": [0, 0, 16, 16], "texture": "#leaves", "tintindex": 0, "cullface": "west"},
+        "east":  {"uv": [0, 0, 16, 16], "texture": "#leaves", "tintindex": 0, "cullface": "east"}
+      }
+    },
+    {
+      "comment": "Katman 2: Portakallar - renk ALMAZ",
+      "from": [0, 0, 0],
+      "to": [16, 16, 16],
+      "faces": {
+        "down":  {"uv": [0, 0, 16, 16], "texture": "#fruit", "cullface": "down"},
+        "up":    {"uv": [0, 0, 16, 16], "texture": "#fruit", "cullface": "up"},
+        "north": {"uv": [0, 0, 16, 16], "texture": "#fruit", "cullface": "north"},
+        "south": {"uv": [0, 0, 16, 16], "texture": "#fruit", "cullface": "south"},
+        "west":  {"uv": [0, 0, 16, 16], "texture": "#fruit", "cullface": "west"},
+        "east":  {"uv": [0, 0, 16, 16], "texture": "#fruit", "cullface": "east"}
+      }
+    }
+  ],
+  "render_type": "minecraft:cutout_mipped"
 }
+
+

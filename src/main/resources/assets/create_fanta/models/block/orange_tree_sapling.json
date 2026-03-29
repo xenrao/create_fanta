@@ -1,8 +1,8 @@
 {
   "parent": "block/cross",
   "textures": {
-    "cross": "minecraft:block/birch_sapling",
-    "particle": "minecraft:block/birch_sapling"
+    "cross": "create_fanta:block/orange_tree_sapling",
+    "particle": "create_fanta:block/orange_tree_sapling"
   },
   "render_type": "cutout"
 }

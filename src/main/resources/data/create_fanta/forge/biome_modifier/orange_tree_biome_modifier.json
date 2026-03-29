@@ -1,9 +1,6 @@
 {
   "type": "forge:add_features",
-  "biomes": [
-    "plains",
-    "forest"
-  ],
+  "biomes": "forest",
   "features": "create_fanta:orange_tree",
   "step": "surface_structures"
 }

@@ -20,7 +20,7 @@
           "data": {
             "Name": "create_fanta:orangetreeleaves",
             "Properties": {
-              "orange": "value"
+              "fruit": "true"
             }
           },
           "weight": 1

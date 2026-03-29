@@ -87,7 +87,7 @@ public class GasConverterReservoirBlockEntity extends SmartBlockEntity implement
 
     @Override
     public void addBehaviours(List<BlockEntityBehaviour> behaviours) {
-        behaviours.add(new GasConverterTransport(this));
+        //behaviours.add(new GasConverterTransport(this));
     }
 
     @Override

@@ -274,10 +274,11 @@ public class GasConverterReservoirBlockEntity extends SmartBlockEntity implement
             tooltip.add(Component.literal("     \u00a77" + input.getHoverName().getString() + " \u00a7ax" + input.getCount()));
         }
 
-        // Amount'u 1,000 formatında göster
-        String formattedAmount = String.format("%,d", amount);
-        tooltip.add(Component.literal("     \u00a77CO\u2082 \u00a79" + formattedAmount + "mB"));
-	    
+        if (amount > 0) {
+        	// Amount'u 1,000 formatında göster
+	        String formattedAmount = String.format("%,d", amount);
+	        tooltip.add(Component.literal("     \u00a77CO\u2082 \u00a79" + formattedAmount + "mB"));
+        }
 	  	//tooltip.add(Component.empty());
 
 	    if (isBlasting) {

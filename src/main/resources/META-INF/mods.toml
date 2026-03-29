@@ -26,4 +26,12 @@ side="BOTH"
 
 
 # Start of user code block dependencies configuration
+
+[[dependencies.create_fanta]]
+modId="create"
+mandatory=true
+versionRange="[6.0.6,)"
+ordering="AFTER"
+side="BOTH"
+
 # End of user code block dependencies configuration

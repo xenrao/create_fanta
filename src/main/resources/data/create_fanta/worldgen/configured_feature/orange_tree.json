@@ -56,7 +56,7 @@
     "decorators": [
       {
         "type": "minecraft:beehive",
-        "probability": 0.05
+        "probability": 0
       }
     ]
   }

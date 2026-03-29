@@ -1,6 +1,5 @@
 package net.xenrao.cf.fluid;
 
-import net.xenrao.cf.init.CreateFantaModItems;
 import net.xenrao.cf.init.CreateFantaModFluids;
 import net.xenrao.cf.init.CreateFantaModFluidTypes;
 import net.xenrao.cf.init.CreateFantaModBlocks;
@@ -14,7 +13,7 @@ import net.minecraft.world.level.block.LiquidBlock;
 
 public abstract class OrangeJuiceFluid extends ForgeFlowingFluid {
 	public static final ForgeFlowingFluid.Properties PROPERTIES = new ForgeFlowingFluid.Properties(() -> CreateFantaModFluidTypes.ORANGE_JUICE_TYPE.get(), () -> CreateFantaModFluids.ORANGE_JUICE.get(),
-			() -> CreateFantaModFluids.FLOWING_ORANGE_JUICE.get()).explosionResistance(100f).bucket(() -> CreateFantaModItems.ORANGE_JUICE_BUCKET.get()).block(() -> (LiquidBlock) CreateFantaModBlocks.ORANGE_JUICE.get());
+			() -> CreateFantaModFluids.FLOWING_ORANGE_JUICE.get()).explosionResistance(100f).block(() -> (LiquidBlock) CreateFantaModBlocks.ORANGE_JUICE.get());
 
 	private OrangeJuiceFluid() {
 		super(PROPERTIES);

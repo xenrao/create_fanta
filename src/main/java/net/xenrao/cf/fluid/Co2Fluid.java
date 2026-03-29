@@ -1,6 +1,5 @@
 package net.xenrao.cf.fluid;
 
-import net.xenrao.cf.init.CreateFantaModItems;
 import net.xenrao.cf.init.CreateFantaModFluids;
 import net.xenrao.cf.init.CreateFantaModFluidTypes;
 import net.xenrao.cf.init.CreateFantaModBlocks;
@@ -14,7 +13,7 @@ import net.minecraft.world.level.block.LiquidBlock;
 
 public abstract class Co2Fluid extends ForgeFlowingFluid {
 	public static final ForgeFlowingFluid.Properties PROPERTIES = new ForgeFlowingFluid.Properties(() -> CreateFantaModFluidTypes.CO_2_TYPE.get(), () -> CreateFantaModFluids.CO_2.get(), () -> CreateFantaModFluids.FLOWING_CO_2.get())
-			.explosionResistance(100f).bucket(() -> CreateFantaModItems.CO_2_BUCKET.get()).block(() -> (LiquidBlock) CreateFantaModBlocks.CO_2.get());
+			.explosionResistance(100f).block(() -> (LiquidBlock) CreateFantaModBlocks.CO_2.get());
 
 	private Co2Fluid() {
 		super(PROPERTIES);

@@ -11,11 +11,7 @@
     "animations": [],
     "name": "Creative Pulp Filter",
     "rarity": "EPIC",
-    "creativeTabs": [
-      {
-        "value": "CUSTOM:Createfanta"
-      }
-    ],
+    "creativeTabs": [],
     "stackSize": 1,
     "enchantability": 0,
     "useDuration": 0,

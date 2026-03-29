@@ -10,13 +10,11 @@ public class SweetenedOrangeJuicePlayerFinishesUsingItemProcedure {
 		if (entity == null)
 			return;
 		double tick = 0;
-		tick = 1800;
+		tick = 600;
 		if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 			_entity.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, (int) tick, 0));
 		if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 			_entity.addEffect(new MobEffectInstance(MobEffects.JUMP, (int) tick, 0));
-		if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-			_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, (int) tick, 0));
 		if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 			_entity.addEffect(new MobEffectInstance(MobEffects.SATURATION, (int) tick, 0));
 		if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())

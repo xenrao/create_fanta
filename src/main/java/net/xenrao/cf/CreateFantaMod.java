@@ -49,9 +49,7 @@ public class CreateFantaMod {
 		CreateFantaModFluidTypes.REGISTRY.register(bus);
 		// Start of user code block mod init
 		// Senin custom kayıtların
-		ModRegistry.BLOCKS.register(bus);
-		ModRegistry.ITEMS.register(bus);
-		ModRegistry.BLOCK_ENTITIES.register(bus);
+		ModRegistry.register(bus);
 		// End of user code block mod init
 	}
 

@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "facing=up,has_filter=false":    { "model": "create_fanta:block/mechanical_filter_without" },
+    "facing=up,has_filter=true":     { "model": "create_fanta:block/mechanical_filter" },
+    
+    "facing=down,has_filter=false":  { "model": "create_fanta:block/mechanical_filter_without", "x": 180 },
+    "facing=down,has_filter=true":   { "model": "create_fanta:block/mechanical_filter", "x": 180 },
+    
+    "facing=south,has_filter=false": { "model": "create_fanta:block/mechanical_filter_without", "x": 90, "y": 180 },
+    "facing=south,has_filter=true":  { "model": "create_fanta:block/mechanical_filter", "x": 90, "y": 180 },
+    
+    "facing=north,has_filter=false": { "model": "create_fanta:block/mechanical_filter_without", "x": 90 },
+    "facing=north,has_filter=true":  { "model": "create_fanta:block/mechanical_filter", "x": 90 },
+    
+    "facing=east,has_filter=false":  { "model": "create_fanta:block/mechanical_filter_without", "x": 90, "y": 90 },
+    "facing=east,has_filter=true":   { "model": "create_fanta:block/mechanical_filter", "x": 90, "y": 90 },
+    
+    "facing=west,has_filter=false":  { "model": "create_fanta:block/mechanical_filter_without", "x": 90, "y": 270 },
+    "facing=west,has_filter=true":   { "model": "create_fanta:block/mechanical_filter", "x": 90, "y": 270 }
+  }
+}

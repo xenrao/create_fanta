@@ -1,0 +1,14 @@
+{
+  "type": "create:emptying",
+  "ingredients": [
+    {
+      "item": "create_fanta:sweetened_orange_juice_bottle"
+    }
+  ],
+  "results": [
+    {
+      "amount": 250,
+      "fluid": "create_fanta:sweetened_orange_juice"
+    }
+  ]
+}

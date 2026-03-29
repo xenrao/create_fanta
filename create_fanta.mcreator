@@ -49,8 +49,7 @@
           "src/main/resources/assets/create_fanta/models/item/unfiltered_orange_juice_bucket.json",
           "src/main/java/net/xenrao/cf/block/UnfilteredOrangeJuiceBlock.java",
           "src/main/resources/assets/create_fanta/blockstates/unfiltered_orange_juice.json",
-          "src/main/resources/assets/create_fanta/models/block/unfiltered_orange_juice.json",
-          "src/main/java/net/xenrao/cf/item/UnfilteredOrangeJuiceItem.java"
+          "src/main/resources/assets/create_fanta/models/block/unfiltered_orange_juice.json"
         ]
       },
       "path": "~/Fluids"
@@ -186,7 +185,6 @@
       "registry_name": "orange_juice",
       "metadata": {
         "files": [
-          "src/main/java/net/xenrao/cf/item/OrangeJuiceItem.java",
           "src/main/java/net/xenrao/cf/block/OrangeJuiceBlock.java",
           "src/main/resources/assets/create_fanta/models/block/orange_juice.json",
           "src/main/java/net/xenrao/cf/fluid/OrangeJuiceFluid.java",
@@ -196,19 +194,6 @@
         ]
       },
       "path": "~/Fluids"
-    },
-    {
-      "name": "TestArea",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "test_area",
-      "metadata": {
-        "dependencies": [],
-        "files": [
-          "src/main/java/net/xenrao/cf/procedures/TestAreaProcedure.java"
-        ]
-      }
     },
     {
       "name": "PlasticBottle",
@@ -292,7 +277,6 @@
           "src/main/resources/assets/create_fanta/blockstates/sweetened_orange_juice.json",
           "src/main/java/net/xenrao/cf/block/SweetenedOrangeJuiceBlock.java",
           "src/main/java/net/xenrao/cf/fluid/SweetenedOrangeJuiceFluid.java",
-          "src/main/java/net/xenrao/cf/item/SweetenedOrangeJuiceItem.java",
           "src/main/resources/assets/create_fanta/models/block/sweetened_orange_juice.json",
           "src/main/resources/assets/create_fanta/models/item/sweetened_orange_juice_bucket.json"
         ]
@@ -367,7 +351,6 @@
           "src/main/java/net/xenrao/cf/fluid/Co2Fluid.java",
           "src/main/java/net/xenrao/cf/block/Co2Block.java",
           "src/main/resources/assets/create_fanta/models/item/co_2_bucket.json",
-          "src/main/java/net/xenrao/cf/item/Co2Item.java",
           "src/main/resources/assets/create_fanta/blockstates/co_2.json",
           "src/main/resources/assets/create_fanta/models/block/co_2.json",
           "src/main/java/net/xenrao/cf/fluid/types/Co2FluidType.java"
@@ -409,7 +392,6 @@
       "registry_name": "petrol",
       "metadata": {
         "files": [
-          "src/main/java/net/xenrao/cf/item/PetrolItem.java",
           "src/main/java/net/xenrao/cf/fluid/types/PetrolFluidType.java",
           "src/main/resources/assets/create_fanta/models/item/petrol_bucket.json",
           "src/main/java/net/xenrao/cf/block/PetrolBlock.java",
@@ -565,6 +547,19 @@
         ]
       },
       "path": "~/Recipes"
+    },
+    {
+      "name": "SweetenedOrangeJuiceEmptying",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "sweetened_orange_juice_emptying",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/create_fanta/recipes/sweetened_orange_juice_emptying.json"
+        ]
+      },
+      "path": "~/Recipes"
     }
   ],
   "variable_elements": [],
@@ -586,12 +581,27 @@
     ],
     "BLOCKS:minecraft:leaves": [
       "~CUSTOM:Orangetreeleaves"
-    ],
-    "BLOCKS:create:fan_transparent": [
-      "Blocks.STONE#3"
     ]
   },
-  "tab_element_order": {},
+  "tab_element_order": {
+    "CUSTOM:Createfanta": [
+      "OrangeTreeSapling",
+      "Orangetreeleaves",
+      "Orange",
+      "Halforange",
+      "PlasticBottle",
+      "SweetenedOrangeJuiceBottle",
+      "Fanta",
+      "UsedPlasticBottle",
+      "RawPlasticResin",
+      "PulpFilter",
+      "UnfilteredOrangeJuice",
+      "OrangeJuice",
+      "SweetenedOrangeJuice",
+      "Co2",
+      "Petrol"
+    ]
+  },
   "language_map": {
     "en_us": {
       "item_group.create_fanta.createfanta": "Create Fanta",
@@ -601,28 +611,23 @@
       "fluid.create_fanta.unfiltered_orange_juice": "Unfiltered Orange Juice",
       "item.create_fanta.half_orange": "Half Orange",
       "item.create_fanta.pulp_filter": "Pulp Filter",
-      "block.create_fanta.filter_block": "Filter",
+      "block.create_fanta.mechanical_filter": "Mechanical Filter",
       "item.create_fanta.creative_pulp_filter": "Creative Pulp Filter",
       "block.create_fanta.orange_juice": "Orange Juice",
       "fluid.create_fanta.orange_juice": "Orange Juice",
       "fluid_type.create_fanta.orange_juice": "Orange Juice",
-      "item.create_fanta.unfiltered_orange_juice_bucket": "Unfiltered Orange Juice Bucket",
-      "item.create_fanta.orange_juice_bucket": "Orange Juice Bucket",
       "item.create_fanta.plastic_bottle": "Plastic Bottle",
       "item.create_fanta.used_plastic_bottle": "Used Plastic Bottle",
       "item.create_fanta.fanta": "Fanta",
       "fluid.create_fanta.sweetened_orange_juice": "Sweetened Orange Juice",
       "block.create_fanta.sweetened_orange_juice": "Sweetened Orange Juice",
       "fluid_type.create_fanta.sweetened_orange_juice": "Sweetened Orange Juice",
-      "item.create_fanta.sweetened_orange_juice_bucket": "Sweetened Orange Juice Bucket",
       "item.create_fanta.sweetened_orange_juice_bottle": "Sweetened Orange Juice",
-      "item.create_fanta.co_2_bucket": "Sweetened Orange Juice Bucket",
       "fluid_type.create_fanta.co_2": "CO₂",
       "fluid.create_fanta.co_2": "CO₂",
       "block.create_fanta.co_2": "CO₂",
       "fluid_type.create_fanta.petrol": "Petrol",
       "block.create_fanta.petrol": "Petrol",
-      "item.create_fanta.petrol_bucket": "Petrol Bucket",
       "fluid.create_fanta.petrol": "Petrol",
       "item.create_fanta.raw_plastic_resin": "Raw Plastic Resin",
       "block.create_fanta.orange_tree_sapling": "Orange Tree Sapling",

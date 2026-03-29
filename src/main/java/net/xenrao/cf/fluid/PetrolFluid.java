@@ -1,6 +1,5 @@
 package net.xenrao.cf.fluid;
 
-import net.xenrao.cf.init.CreateFantaModItems;
 import net.xenrao.cf.init.CreateFantaModFluids;
 import net.xenrao.cf.init.CreateFantaModFluidTypes;
 import net.xenrao.cf.init.CreateFantaModBlocks;
@@ -14,7 +13,7 @@ import net.minecraft.world.level.block.LiquidBlock;
 
 public abstract class PetrolFluid extends ForgeFlowingFluid {
 	public static final ForgeFlowingFluid.Properties PROPERTIES = new ForgeFlowingFluid.Properties(() -> CreateFantaModFluidTypes.PETROL_TYPE.get(), () -> CreateFantaModFluids.PETROL.get(), () -> CreateFantaModFluids.FLOWING_PETROL.get())
-			.explosionResistance(100f).tickRate(50).bucket(() -> CreateFantaModItems.PETROL_BUCKET.get()).block(() -> (LiquidBlock) CreateFantaModBlocks.PETROL.get());
+			.explosionResistance(100f).tickRate(50).block(() -> (LiquidBlock) CreateFantaModBlocks.PETROL.get());
 
 	private PetrolFluid() {
 		super(PROPERTIES);

@@ -35,6 +35,16 @@ import net.xenrao.cf.init.CreateFantaModFluids;
 
 import java.util.List;
 import net.minecraft.world.level.BlockAndTintGetter;
+import net.minecraft.world.level.Level;
+
+import com.simibubi.create.AllBlocks;
+import com.simibubi.create.content.fluids.FluidPropagator;
+import com.simibubi.create.content.fluids.FluidTransportBehaviour;
+import com.simibubi.create.content.fluids.pipes.EncasedPipeBlock;
+import com.simibubi.create.content.fluids.pump.PumpBlock;
+import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour;
+import net.minecraft.world.level.BlockAndTintGetter;
+import net.minecraft.world.level.block.entity.BlockEntity;
 
 public class FilterBlockEntity extends KineticBlockEntity implements IHaveGoggleInformation {
 
@@ -43,7 +53,7 @@ public class FilterBlockEntity extends KineticBlockEntity implements IHaveGoggle
     private static final int LOSS = 20;
     private static final int BASE_TIME = 500;
 
- private int timer = BASE_TIME;
+	private int timer = BASE_TIME;
     private final SmartFluidTank inTank;
     private final SmartFluidTank outTank;
 
@@ -225,7 +235,12 @@ public class FilterBlockEntity extends KineticBlockEntity implements IHaveGoggle
 
         if (!hasFilter())
             return;
-
+            
+	    if (hasFlowPressure()) {
+	        pullFromNeighbour();
+	        pushToNeighbour();
+	    }
+    	
         int rate = Mth.clamp((int) (spd / 16f), 1, 512);
 
         if (!inTank.isEmpty()
@@ -239,7 +254,69 @@ public class FilterBlockEntity extends KineticBlockEntity implements IHaveGoggle
             timer = BASE_TIME;
         }
     }
-
+    
+	private boolean hasFlowPressure() {
+	    FluidTransportBehaviour transport = getBehaviour(FluidTransportBehaviour.TYPE);
+	    if (transport == null) return false;
+	    return transport.hasAnyPressure();
+	}
+	private void pullFromNeighbour() {
+	    if (level == null || level.isClientSide) return;
+	    
+	    Direction inputDir = getInputSide();
+	    BlockPos neighbourPos = worldPosition.relative(inputDir);
+	    
+	    BlockEntity neighbour = level.getBlockEntity(neighbourPos);
+	    if (neighbour == null) return;
+	    
+	    // Komşu zaten pipe/pump ise Create halleder, karışma
+	    FluidTransportBehaviour transport = BlockEntityBehaviour.get(level, neighbourPos, FluidTransportBehaviour.TYPE);
+	    if (transport != null) return;
+	    
+	    // Komşu bir fluid handler ise (tank, basin vs.) direkt çek
+	    neighbour.getCapability(ForgeCapabilities.FLUID_HANDLER, inputDir.getOpposite()).ifPresent(handler -> {
+	        int space = inTank.getCapacity() - inTank.getFluidAmount();
+	        if (space <= 0) return;
+	        
+	        FluidStack simulated = handler.drain(
+	            new FluidStack(CreateFantaModFluids.UNFILTERED_ORANGE_JUICE.get(), Math.min(space, BATCH)),
+	            FluidAction.SIMULATE
+	        );
+	        if (simulated.isEmpty()) return;
+	        if (!simulated.getFluid().isSame(CreateFantaModFluids.UNFILTERED_ORANGE_JUICE.get())) return;
+	        
+	        FluidStack drained = handler.drain(simulated, FluidAction.EXECUTE);
+	        if (!drained.isEmpty()) {
+	            inTank.fill(drained, FluidAction.EXECUTE);
+	        }
+	    });
+	}
+	
+	private void pushToNeighbour() {
+	    if (level == null || level.isClientSide) return;
+	    
+	    Direction outputDir = getOutputSide();
+	    BlockPos neighbourPos = worldPosition.relative(outputDir);
+	    
+	    BlockEntity neighbour = level.getBlockEntity(neighbourPos);
+	    if (neighbour == null) return;
+	    
+	    // Komşu zaten pipe/pump ise Create halleder, karışma
+	    FluidTransportBehaviour transport = BlockEntityBehaviour.get(level, neighbourPos, FluidTransportBehaviour.TYPE);
+	    if (transport != null) return;
+	    
+	    if (outTank.isEmpty()) return;
+	    
+	    neighbour.getCapability(ForgeCapabilities.FLUID_HANDLER, outputDir.getOpposite()).ifPresent(handler -> {
+	        FluidStack available = outTank.getFluid().copy();
+	        available.setAmount(Math.min(available.getAmount(), BATCH));
+	        
+	        int filled = handler.fill(available, FluidAction.EXECUTE);
+	        if (filled > 0) {
+	            outTank.drain(filled, FluidAction.EXECUTE);
+	        }
+	    });
+	}
     private void convert() {
         if (inTank.getFluidAmount() < BATCH)
             return;
@@ -369,17 +446,50 @@ public class FilterBlockEntity extends KineticBlockEntity implements IHaveGoggle
     }
 
     // ===== PIPE BAĞLANTISI =====
-    private class FilterTransport extends FluidTransportBehaviour {
-        public FilterTransport(SmartBlockEntity be) {
-            super(be);
-        }
-        
-        @Override
-        public boolean canHaveFlowToward(BlockState state, Direction dir) {
-            return dir == getInputSide() || dir == getOutputSide();
-        }
-
+private class FilterTransport extends FluidTransportBehaviour {
+    public FilterTransport(SmartBlockEntity be) {
+        super(be);
     }
+
+    @Override
+    public boolean canHaveFlowToward(BlockState state, Direction dir) {
+        return dir == getInputSide() || dir == getOutputSide();
+    }
+
+    @Override
+    public AttachmentTypes getRenderedRimAttachment(BlockAndTintGetter world, BlockPos pos,
+                                                     BlockState state, Direction direction) {
+        if (!canHaveFlowToward(state, direction))
+            return AttachmentTypes.NONE;
+
+        BlockPos offsetPos = pos.relative(direction);
+        BlockState facingState = world.getBlockState(offsetPos);
+
+        // Pump doğrudan bağlıysa → bağlantı yok (pump kendi halleder)
+        if (facingState.getBlock() instanceof PumpBlock
+            && facingState.getValue(PumpBlock.FACING) == direction.getOpposite())
+            return AttachmentTypes.NONE;
+
+        // Encased pipe bağlıysa → RIM
+        if (AllBlocks.ENCASED_FLUID_PIPE.has(facingState)
+            && facingState.getValue(EncasedPipeBlock.FACING_TO_PROPERTY_MAP.get(direction.getOpposite())))
+            return AttachmentTypes.RIM;
+
+        // Komşu blokta IFluidHandler varsa → DRAIN (tank, basin vs.)
+        if (FluidPropagator.hasFluidCapability(world, offsetPos, direction.getOpposite())
+            && !AllBlocks.HOSE_PULLEY.has(facingState))
+            return AttachmentTypes.DRAIN;
+
+        // Başka bir pipe varsa → RIM
+        FluidTransportBehaviour neighbourPipe =
+            BlockEntityBehaviour.get(world, offsetPos, FluidTransportBehaviour.TYPE);
+        if (neighbourPipe != null
+            && neighbourPipe.canHaveFlowToward(facingState, direction.getOpposite()))
+            return AttachmentTypes.RIM;
+
+        return AttachmentTypes.NONE;
+    }
+}
 
     // ===== FLUID HANDLERS =====
     private class InHandler implements IFluidHandler {

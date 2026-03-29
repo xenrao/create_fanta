@@ -33,9 +33,7 @@ public class FilterRenderer extends KineticBlockEntityRenderer<FilterBlockEntity
 	    float offset = getRotationOffsetForPosition(be, be.getBlockPos(), axis);
 	    float angleDeg = (time * speed * 3f / 10f + offset) % 360;
 	
-        // Kendi modelimizi kullan
-        SuperByteBuffer cog = CachedBuffers.partial(
-            FilterPartialModels.FILTER_COG, state);
+	    SuperByteBuffer cog = CachedBuffers.partial(FilterPartialModels.FILTER_COG, state);
 	
 	    ms.pushPose();
 	    ms.translate(0.5, 0.5, 0.5);
@@ -49,7 +47,12 @@ public class FilterRenderer extends KineticBlockEntityRenderer<FilterBlockEntity
 	        case WEST -> ms.mulPose(Axis.ZP.rotationDegrees(90));
 	    }
 	
-	    ms.mulPose(Axis.YP.rotationDegrees(angleDeg));
+	    float visualAngle = switch (facing) {
+	        case WEST, DOWN, NORTH -> -angleDeg;
+	        default -> angleDeg;
+	    };
+	
+	    ms.mulPose(Axis.YP.rotationDegrees(visualAngle));
 	
 	    ms.translate(-0.5, -0.5, -0.5);
 	

@@ -13,6 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(FluidTransportBehaviour.class)
 public class FluidTransportBehaviourMixin {
+
 	@Inject(method = "getRenderedRimAttachment", at = @At("HEAD"), cancellable = true, remap = false)
 	private void create_fanta$hideRimForFilter(BlockAndTintGetter world, BlockPos pos, BlockState state,
 	                                            Direction direction,
@@ -30,4 +31,5 @@ public class FluidTransportBehaviourMixin {
 	        }
 	    }
 	}
+	
 }

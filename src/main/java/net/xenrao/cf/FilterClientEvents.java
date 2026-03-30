@@ -8,6 +8,8 @@ import net.minecraftforge.fml.common.Mod;
 import net.xenrao.cf.ModRegistry;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.xenrao.cf.CreateFantaPonderPlugin;
+import net.createmod.ponder.foundation.PonderIndex;
 
 @Mod.EventBusSubscriber(modid = "create_fanta", bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class FilterClientEvents {
@@ -23,6 +25,7 @@ public class FilterClientEvents {
         	FilterPartialModels.init();
             ItemBlockRenderTypes.setRenderLayer(ModRegistry.FILTER_BLOCK.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(ModRegistry.GAS_CONVERTER_BLOCK.get(), RenderType.cutoutMipped());
+            PonderIndex.addPlugin(new CreateFantaPonderPlugin());
         });
     }
 }

@@ -560,6 +560,54 @@
         ]
       },
       "path": "~/Recipes"
+    },
+    {
+      "name": "GasConverterScenes",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "gas_converter_scenes",
+      "metadata": {
+        "files": [
+          "src/main/java/net/xenrao/cf/GasConverterScenes.java"
+        ]
+      }
+    },
+    {
+      "name": "CreateFantaPonderPlugin",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "create_fanta_ponder_plugin",
+      "metadata": {
+        "files": [
+          "src/main/java/net/xenrao/cf/CreateFantaPonderPlugin.java"
+        ]
+      }
+    },
+    {
+      "name": "CreateFantaPonders",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "create_fanta_ponders",
+      "metadata": {
+        "files": [
+          "src/main/java/net/xenrao/cf/CreateFantaPonders.java"
+        ]
+      }
+    },
+    {
+      "name": "FilterScenes",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "filter_scenes",
+      "metadata": {
+        "files": [
+          "src/main/java/net/xenrao/cf/FilterScenes.java"
+        ]
+      }
     }
   ],
   "variable_elements": [],
@@ -569,19 +617,11 @@
       "CUSTOM:PulpFilter",
       "CUSTOM:CreativePulpFilter"
     ],
-    "BLOCKS:minecraft:replaceable": [
-      "~CUSTOM:Petrol",
-      "~CUSTOM:Co2",
-      "~CUSTOM:SweetenedOrangeJuice",
-      "~CUSTOM:OrangeJuice",
-      "~CUSTOM:UnfilteredOrangeJuice"
-    ],
+    "BLOCKS:minecraft:replaceable": [],
     "BLOCKS:minecraft:saplings": [
       "~CUSTOM:OrangeTreeSapling"
     ],
-    "BLOCKS:minecraft:leaves": [
-      "~CUSTOM:Orangetreeleaves"
-    ]
+    "BLOCKS:minecraft:leaves": []
   },
   "tab_element_order": {
     "CUSTOM:Createfanta": [
@@ -632,7 +672,13 @@
       "item.create_fanta.raw_plastic_resin": "Raw Plastic Resin",
       "block.create_fanta.orange_tree_sapling": "Orange Tree Sapling",
       "block.create_fanta.orangetreeleaves": "Orange Tree Leaves",
-      "block.create_fanta.gas_converter_reservoir": "Gas Converter Reservoir"
+      "block.create_fanta.gas_converter_reservoir": "Gas Converter Reservoir",
+      "create_fanta.ponder.gas_converter_heating.header": "Using the Gas Converter Reservoir",
+      "create_fanta.ponder.gas_converter_heating.text_1": "Place a Gas Converter Reservoir",
+      "create_fanta.ponder.gas_converter_heating.text_2": "Add limestone",
+      "create_fanta.ponder.gas_converter_heating.text_3": "Heat it using an Encased Fan blowing through any Blasting Catalyst",
+      "create_fanta.ponder.gas_converter_heating.text_4": "After a while, Limestone will turn to CO₂",
+      "create_fanta.ponder.gas_converter_heating.text_5": "Converted CO₂ can be extract from upper face of the block"
     }
   },
   "metadata": {

@@ -27,5 +27,11 @@
   "item.create_fanta.raw_plastic_resin": "Raw Plastic Resin",
   "block.create_fanta.orange_tree_sapling": "Orange Tree Sapling",
   "block.create_fanta.orangetreeleaves": "Orange Tree Leaves",
-  "block.create_fanta.gas_converter_reservoir": "Gas Converter Reservoir"
+  "block.create_fanta.gas_converter_reservoir": "Gas Converter Reservoir",
+  "create_fanta.ponder.gas_converter_heating.header": "Using the Gas Converter Reservoir",
+  "create_fanta.ponder.gas_converter_heating.text_1": "Place a Gas Converter Reservoir",
+  "create_fanta.ponder.gas_converter_heating.text_2": "Add limestone",
+  "create_fanta.ponder.gas_converter_heating.text_3": "Heat it using an Encased Fan blowing through any Blasting Catalyst",
+  "create_fanta.ponder.gas_converter_heating.text_4": "After a while, Limestone will turn to CO₂",
+  "create_fanta.ponder.gas_converter_heating.text_5": "Converted CO₂ can be extract from upper face of the block"
 }

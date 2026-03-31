@@ -445,6 +445,8 @@ public class FilterBlockEntity extends KineticBlockEntity implements IHaveGoggle
         return super.getCapability(cap, side);
     }
 
+	//public SmartFluidTank getOutTank() { return outTank; }
+	
     // ===== PIPE BAĞLANTISI =====
 private class FilterTransport extends FluidTransportBehaviour {
     public FilterTransport(SmartBlockEntity be) {

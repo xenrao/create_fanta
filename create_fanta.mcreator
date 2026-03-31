@@ -678,7 +678,13 @@
       "create_fanta.ponder.gas_converter_heating.text_2": "Add limestone",
       "create_fanta.ponder.gas_converter_heating.text_3": "Heat it using an Encased Fan blowing through any Blasting Catalyst",
       "create_fanta.ponder.gas_converter_heating.text_4": "After a while, Limestone will turn to CO₂",
-      "create_fanta.ponder.gas_converter_heating.text_5": "Converted CO₂ can be extract from upper face of the block"
+      "create_fanta.ponder.gas_converter_heating.text_5": "Converted CO₂ can be extract from upper face of the block",
+      "create_fanta.ponder.mechanical_filter_filtering.header": "Using the Mechanical Filter",
+      "create_fanta.ponder.mechanical_filter_filtering.text_1": "The Mechanical Filter processes fluids passing through it",
+      "create_fanta.ponder.mechanical_filter_filtering.text_2": "It cannot operate without a Pulp Filter installed",
+      "create_fanta.ponder.mechanical_filter_filtering.text_3": "A Mechanical Pump is required to move fluid through the filter",
+      "create_fanta.ponder.mechanical_filter_filtering.text_4": "Unfiltered Orange Juice enters from the input side",
+      "create_fanta.ponder.mechanical_filter_filtering.text_5": "After a short delay, the filtered fluid exits from the other side"
     }
   },
   "metadata": {

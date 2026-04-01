@@ -54,7 +54,7 @@ public class ModRegistry {
 
     // ===== GAS CONVERTER RESERVOIR =====
     public static final RegistryObject<GasConverterReservoirBlock> GAS_CONVERTER_BLOCK =
-        BLOCKS.register("gas_converter_reservoir",
+        BLOCKS.register("refinery_basin",
             () -> new GasConverterReservoirBlock(BlockBehaviour.Properties.of()
                 .mapColor(MapColor.STONE)
                 .strength(3.5f)
@@ -62,11 +62,11 @@ public class ModRegistry {
                 .noOcclusion()));
 
     public static final RegistryObject<BlockItem> GAS_CONVERTER_BLOCK_ITEM =
-        ITEMS.register("gas_converter_reservoir",
+        ITEMS.register("refinery_basin",
             () -> new BlockItem(GAS_CONVERTER_BLOCK.get(), new Item.Properties()));
 
     public static final RegistryObject<BlockEntityType<GasConverterReservoirBlockEntity>> GAS_CONVERTER_BE =
-        BLOCK_ENTITIES.register("gas_converter_reservoir",
+        BLOCK_ENTITIES.register("refinery_basin",
             () -> BlockEntityType.Builder
                 .of(GasConverterReservoirBlockEntity::new, GAS_CONVERTER_BLOCK.get())
                 .build(null));

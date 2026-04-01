@@ -1,0 +1,12 @@
+{
+  "type": "create_fanta:heating",
+  "ingredient": {
+    "tag": "create:stone_types/limestone"
+  },
+  "ingredient_count": 15,
+  "result": {
+    "fluid": "create_fanta:co_2",
+    "amount": 250
+  },
+  "processing_time": 500
+}

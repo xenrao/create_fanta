@@ -1,0 +1,28 @@
+{
+  "type": "create:mechanical_crafting",
+  "acceptMirrored": true,
+  "key": {
+    "A": {
+      "item": "create:andesite_alloy"
+    },
+    "P": {
+      "item": "create:fluid_pipe"
+    },
+    "B": {
+      "item": "create:basin"
+    },
+    "G": {
+      "tag": "forge:glass"
+    }
+  },
+  "pattern": [
+    "APA",
+    "G G",
+    "GBG",
+    "AAA"
+  ],
+  "result": {
+    "count": 1,
+    "item": "create_fanta:refinery_basin"
+  }
+}

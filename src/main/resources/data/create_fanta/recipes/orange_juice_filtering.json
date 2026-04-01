@@ -1,0 +1,12 @@
+{
+  "type": "create_fanta:filtering",
+  "ingredient": {
+    "fluid": "create_fanta:unfiltered_orange_juice",
+    "amount": 50
+  },
+  "result": {
+    "fluid": "create_fanta:orange_juice",
+    "amount": 30
+  },
+  "processing_time": 300
+}

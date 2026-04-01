@@ -24,7 +24,7 @@ public class GasConverterScenes {
     public static void heating(SceneBuilder builder, SceneBuildingUtil util) {
         CreateSceneBuilder scene = new CreateSceneBuilder(builder);
 
-        scene.title("gas_converter_heating", "Using the Gas Converter Reservoir");
+        scene.title("refinery_basin_processing", "Using the Gas Converter Reservoir");
         scene.configureBasePlate(0, 0, 5);
         scene.world().showSection(util.select().layer(0), Direction.UP);
         scene.idle(5);
@@ -46,7 +46,7 @@ public class GasConverterScenes {
         scene.idle(15);
 
         scene.overlay().showText(50)
-            .text("Place a Gas Converter Reservoir")
+            .text("1")
             .pointAt(util.vector().topOf(converter))
             .placeNearTarget()
             .attachKeyFrame();
@@ -61,7 +61,7 @@ public class GasConverterScenes {
         ).rightClick().withItem(limestone);
         
         scene.overlay().showText(50)
-            .text("Insert Limestone into the Reservoir")
+            .text("2")
             .pointAt(util.vector().topOf(converter))
             .placeNearTarget()
             .attachKeyFrame();
@@ -97,7 +97,7 @@ public class GasConverterScenes {
 
 
         scene.overlay().showText(150)
-            .text("Heat it using an Encased Fan blowing through Lava")
+            .text("3")
             .pointAt(util.vector().topOf(lava))
             .placeNearTarget()
             .attachKeyFrame();
@@ -106,7 +106,7 @@ public class GasConverterScenes {
 
 
         scene.overlay().showText(80)
-            .text("bruh")
+            .text("4")
             .pointAt(util.vector().centerOf(converter))
             .placeNearTarget()
             .attachKeyFrame();
@@ -130,7 +130,7 @@ public class GasConverterScenes {
         scene.idle(15);
 
         scene.overlay().showText(80)
-            .text("A Mechanical Pump extracts the fluid from the top")
+            .text("5")
             .pointAt(util.vector().topOf(pump))
             .placeNearTarget()
             .attachKeyFrame();

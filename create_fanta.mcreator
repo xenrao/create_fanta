@@ -608,6 +608,195 @@
           "src/main/java/net/xenrao/cf/FilterScenes.java"
         ]
       }
+    },
+    {
+      "name": "FilterRecipeCategory",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "filter_recipe_category",
+      "metadata": {
+        "files": [
+          "src/main/java/net/xenrao/cf/FilterRecipeCategory.java"
+        ]
+      }
+    },
+    {
+      "name": "HeatingRecipeCategory",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "heating_recipe_category",
+      "metadata": {
+        "files": [
+          "src/main/java/net/xenrao/cf/HeatingRecipeCategory.java"
+        ]
+      }
+    },
+    {
+      "name": "CreateFantaJeiPlugin",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "create_fanta_jei_plugin",
+      "metadata": {
+        "files": [
+          "src/main/java/net/xenrao/cf/CreateFantaJeiPlugin.java"
+        ]
+      }
+    },
+    {
+      "name": "OrangePeel",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "orange_peel",
+      "metadata": {
+        "files": [
+          "src/main/java/net/xenrao/cf/item/OrangePeelItem.java",
+          "src/main/resources/assets/create_fanta/models/item/orange_peel.json"
+        ]
+      }
+    },
+    {
+      "name": "OrangeDyeFromOrangePeel",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "orange_dye_from_orange_peel",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/create_fanta/advancements/recipes/orange_dye_from_orange_peel.json",
+          "src/main/resources/data/create_fanta/recipes/orange_dye_from_orange_peel.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "LimestoneHeating",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "limestone_heating",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/create_fanta/recipes/limestone_heating.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "ModRecipes",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "mod_recipes",
+      "metadata": {
+        "files": [
+          "src/main/java/net/xenrao/cf/ModRecipes.java"
+        ]
+      }
+    },
+    {
+      "name": "GasConverterHeatingRecipe",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "gas_converter_heating_recipe",
+      "metadata": {
+        "files": [
+          "src/main/java/net/xenrao/cf/GasConverterHeatingRecipe.java"
+        ]
+      }
+    },
+    {
+      "name": "StoneHeating",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "stone_heating",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/create_fanta/recipes/stone_heating.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "FilteringRecipe",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "filtering_recipe",
+      "metadata": {
+        "files": [
+          "src/main/java/net/xenrao/cf/FilteringRecipe.java"
+        ]
+      }
+    },
+    {
+      "name": "OrangeJuiceFiltering",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "orange_juice_filtering",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/create_fanta/recipes/orange_juice_filtering.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "PulpFilterRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "pulp_filter_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/create_fanta/recipes/pulp_filter_recipe.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "RefineryBasinRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "refinery_basin_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/create_fanta/recipes/refinery_basin_recipe.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "MechanicalFilterRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "mechanical_filter_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/create_fanta/recipes/mechanical_filter_recipe.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "CommonSetup",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "common_setup",
+      "metadata": {
+        "files": [
+          "src/main/java/net/xenrao/cf/CommonSetup.java"
+        ]
+      }
     }
   ],
   "variable_elements": [],
@@ -617,11 +806,12 @@
       "CUSTOM:PulpFilter",
       "CUSTOM:CreativePulpFilter"
     ],
-    "BLOCKS:minecraft:replaceable": [],
     "BLOCKS:minecraft:saplings": [
       "~CUSTOM:OrangeTreeSapling"
     ],
-    "BLOCKS:minecraft:leaves": []
+    "BLOCKS:minecraft:leaves": [
+      "CUSTOM:Orangetreeleaves"
+    ]
   },
   "tab_element_order": {
     "CUSTOM:Createfanta": [
@@ -639,7 +829,8 @@
       "OrangeJuice",
       "SweetenedOrangeJuice",
       "Co2",
-      "Petrol"
+      "Petrol",
+      "OrangePeel"
     ]
   },
   "language_map": {
@@ -672,19 +863,22 @@
       "item.create_fanta.raw_plastic_resin": "Raw Plastic Resin",
       "block.create_fanta.orange_tree_sapling": "Orange Tree Sapling",
       "block.create_fanta.orangetreeleaves": "Orange Tree Leaves",
-      "block.create_fanta.gas_converter_reservoir": "Gas Converter Reservoir",
-      "create_fanta.ponder.gas_converter_heating.header": "Using the Gas Converter Reservoir",
-      "create_fanta.ponder.gas_converter_heating.text_1": "Place a Gas Converter Reservoir",
-      "create_fanta.ponder.gas_converter_heating.text_2": "Add limestone",
-      "create_fanta.ponder.gas_converter_heating.text_3": "Heat it using an Encased Fan blowing through any Blasting Catalyst",
-      "create_fanta.ponder.gas_converter_heating.text_4": "After a while, Limestone will turn to CO₂",
-      "create_fanta.ponder.gas_converter_heating.text_5": "Converted CO₂ can be extract from upper face of the block",
+      "block.create_fanta.refinery_basin": "Refinery Basin",
+      "create_fanta.ponder.refinery_basin_processing.header": "Using the Refinery Basin",
+      "create_fanta.ponder.refinery_basin_processing.text_1": "Place a Refinery Basin",
+      "create_fanta.ponder.refinery_basin_processing.text_2": "Add releated block to basin",
+      "create_fanta.ponder.refinery_basin_processing.text_3": "Place Encased Fan blowing through with Catalyst",
+      "create_fanta.ponder.refinery_basin_processing.text_4": "After a while, items will turn to liquid",
+      "create_fanta.ponder.refinery_basin_processing.text_5": "Converted liquid can be extract from upper face of the block",
       "create_fanta.ponder.mechanical_filter_filtering.header": "Using the Mechanical Filter",
       "create_fanta.ponder.mechanical_filter_filtering.text_1": "The Mechanical Filter processes fluids passing through it",
       "create_fanta.ponder.mechanical_filter_filtering.text_2": "It cannot operate without a Pulp Filter installed",
       "create_fanta.ponder.mechanical_filter_filtering.text_3": "A Mechanical Pump is required to move fluid through the filter",
-      "create_fanta.ponder.mechanical_filter_filtering.text_4": "Unfiltered Orange Juice enters from the input side",
-      "create_fanta.ponder.mechanical_filter_filtering.text_5": "After a short delay, the filtered fluid exits from the other side"
+      "create_fanta.ponder.mechanical_filter_filtering.text_4": "The liquid to be filtered enters from the input side",
+      "create_fanta.ponder.mechanical_filter_filtering.text_5": "After a short delay, the filtered fluid exits from the output side",
+      "create_fanta.jei.filtering": "Filtering",
+      "create_fanta.jei.heating": "Heating",
+      "item.create_fanta.orange_peel": "Orange Peel"
     }
   },
   "metadata": {

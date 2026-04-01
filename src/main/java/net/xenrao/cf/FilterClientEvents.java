@@ -11,6 +11,9 @@ import net.minecraft.client.renderer.RenderType;
 import net.xenrao.cf.CreateFantaPonderPlugin;
 import net.createmod.ponder.foundation.PonderIndex;
 
+import com.simibubi.create.foundation.item.KineticStats;
+import com.simibubi.create.foundation.item.TooltipModifier;
+
 @Mod.EventBusSubscriber(modid = "create_fanta", bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class FilterClientEvents {
 
@@ -26,6 +29,10 @@ public class FilterClientEvents {
             ItemBlockRenderTypes.setRenderLayer(ModRegistry.FILTER_BLOCK.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(ModRegistry.GAS_CONVERTER_BLOCK.get(), RenderType.cutoutMipped());
             PonderIndex.addPlugin(new CreateFantaPonderPlugin());
+            TooltipModifier.REGISTRY.register(
+                ModRegistry.FILTER_BLOCK_ITEM.get(),
+                new KineticStats(ModRegistry.FILTER_BLOCK.get())
+            );
         });
     }
 }

@@ -2,6 +2,6 @@
   "replace": false,
   "values": [
     "create_fanta:mechanical_filter",
-    "create_fanta:gas_converter_reservoir"
+    "create_fanta:refinery_basin"
   ]
 }

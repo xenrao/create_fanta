@@ -9,6 +9,9 @@
     {
       "amount": 50,
       "fluid": "create_fanta:unfiltered_orange_juice"
+    },
+    {
+      "item": "create_fanta:orange_peel"
     }
   ]
 }

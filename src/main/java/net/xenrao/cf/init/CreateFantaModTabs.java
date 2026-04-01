@@ -27,5 +27,6 @@ public class CreateFantaModTabs {
 				tabData.accept(CreateFantaModItems.USED_PLASTIC_BOTTLE.get());
 				tabData.accept(CreateFantaModItems.RAW_PLASTIC_RESIN.get());
 				tabData.accept(CreateFantaModItems.PULP_FILTER.get());
+				tabData.accept(CreateFantaModItems.ORANGE_PEEL.get());
 			}).build());
 }

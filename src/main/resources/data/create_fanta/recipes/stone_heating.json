@@ -1,0 +1,12 @@
+{
+  "type": "create_fanta:heating",
+  "ingredient": {
+    "tag": "forge:stone"
+  },
+  "ingredient_count": 3,
+  "result": {
+    "fluid": "minecraft:lava",
+    "amount": 50
+  },
+  "processing_time": 100
+}

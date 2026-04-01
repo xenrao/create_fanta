@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "active=false": {
+      "model": "create_fanta:block/refinery_basin"
+    },
+    "active=true": {
+      "model": "create_fanta:block/refinery_basin"
+    }
+  }
+}

@@ -27,6 +27,7 @@ public class CreateFantaModItems {
 	public static final RegistryObject<Item> RAW_PLASTIC_RESIN;
 	public static final RegistryObject<Item> ORANGE_TREE_SAPLING;
 	public static final RegistryObject<Item> ORANGETREELEAVES;
+	public static final RegistryObject<Item> ORANGE_PEEL;
 	static {
 		ORANGE = REGISTRY.register("orange", OrangeItem::new);
 		HALF_ORANGE = REGISTRY.register("half_orange", HalforangeItem::new);
@@ -39,6 +40,7 @@ public class CreateFantaModItems {
 		RAW_PLASTIC_RESIN = REGISTRY.register("raw_plastic_resin", RawPlasticResinItem::new);
 		ORANGE_TREE_SAPLING = block(CreateFantaModBlocks.ORANGE_TREE_SAPLING);
 		ORANGETREELEAVES = block(CreateFantaModBlocks.ORANGETREELEAVES);
+		ORANGE_PEEL = REGISTRY.register("orange_peel", OrangePeelItem::new);
 	}
 
 	// Start of user code block custom items

@@ -1,0 +1,19 @@
+{
+  "type": "create:mechanical_crafting",
+  "acceptMirrored": true,
+  "key": {
+    "P": {
+      "item": "create:fluid_pipe"
+    },
+    "C": {
+      "item": "create:mechanical_pump"
+    }
+  },
+  "pattern": [
+    "P PCP"
+  ],
+  "result": {
+    "item": "create_fanta:mechanical_filter",
+    "count": 1
+  }
+}

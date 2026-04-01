@@ -9,6 +9,9 @@
     {
       "amount": 250,
       "fluid": "create_fanta:sweetened_orange_juice"
+    },
+    {
+      "item": "create_fanta:used_plastic_bottle"
     }
   ]
 }
